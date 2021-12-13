@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #E5E5E0;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main_signup">
+   <right>
+      <AnchorPane prefHeight="700.0" prefWidth="383.0" style="-fx-background-color: #b6c4e1;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="194.0" fitWidth="414.0" layoutY="505.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../png/cartoon_city.png" />
+               </image>
+            </ImageView>
+            <Text fill="#372b52" layoutX="95.0" layoutY="206.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find your people. Engage your customers. Build your brand. Do it all with TechBuild platform." wrappingWidth="192.20504760742188">
+               <font>
+                  <Font name="Monotype Corsiva" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="700.0" prefWidth="818.0" style="-fx-background-color: #f2f2f2;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="Lastname" layoutX="339.0" layoutY="222.0" prefHeight="25.0" prefWidth="200.0" promptText="Last name" style="-fx-background-color: #f2f2f2; -fx-prompt-text-fill: #191859;" styleClass="text-field" />
+            <Label layoutX="337.0" layoutY="82.0" text="Ein Konto erstellen " textFill="#1e1e1e">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Firstname" layoutX="339.0" layoutY="166.0" prefHeight="25.0" prefWidth="200.0" promptText="First name" style="-fx-background-color: #f2f2f2; -fx-prompt-text-fill: #191859;" styleClass="text-field">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
+            <TextField fx:id="Username" layoutX="339.0" layoutY="277.0" prefHeight="25.0" prefWidth="200.0" promptText="User name" style="-fx-background-color: #f2f2f2; -fx-prompt-text-fill: #191859;" styleClass="text-field" />
+            <Label layoutX="197.0" layoutY="168.0" text="Vorname" textFill="#1e1e1e">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="198.0" layoutY="224.0" text="Nachname" textFill="#1e1e1e">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="279.0" text="User name" textFill="#1e1e1e">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="331.0" text="Password" textFill="#1e1e1e">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="Pass" layoutX="339.0" layoutY="329.0" prefHeight="25.0" prefWidth="200.0" promptText="Password" style="-fx-background-color: #f2f2f2; -fx-prompt-text-fill: #191859;" styleClass="text-field" />
+            <PasswordField fx:id="ConfirmPass" layoutX="339.0" layoutY="381.0" prefHeight="25.0" prefWidth="200.0" promptText="Confirm password" style="-fx-background-color: #f2f2f2; -fx-prompt-text-fill: #191859;" />
+            <Label layoutX="161.0" layoutY="383.0" text="Passwort bestätigen" textFill="#1e1e1e">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+            <HBox layoutX="338.0" layoutY="437.0" prefHeight="22.0" prefWidth="214.0">
+               <children>
+                  <JFXRadioButton fx:id="builder" prefHeight="20.0" prefWidth="130.0" selected="true" text="Baumeister">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                     <selectedColor>
+                        <Color red="0.09803921729326248" green="0.0941176488995552" blue="0.3490196168422699" />
+                     </selectedColor>
+                     <unSelectedColor>
+                        <Color red="0.11764705926179886" green="0.11764705926179886" blue="0.11764705926179886" />
+                     </unSelectedColor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="TypeofAcc" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="supplier" prefHeight="20.0" prefWidth="94.0" text="Lieferant" toggleGroup="$TypeofAcc">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                     <selectedColor>
+                        <Color red="0.09803921729326248" green="0.0941176488995552" blue="0.3490196168422699" />
+                     </selectedColor>
+                     <unSelectedColor>
+                        <Color red="0.11764705926179886" green="0.11764705926179886" blue="0.11764705926179886" />
+                     </unSelectedColor>
+                  </JFXRadioButton>
+               </children>
+            </HBox>
+            <Label layoutX="220.0" layoutY="438.0" text="Typ" textFill="#1e1e1e">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="wrongPassword" layoutX="351.0" layoutY="355.0" prefHeight="17.0" prefWidth="176.0" textFill="#ec1c1c" />
+            <Label fx:id="emptyField" layoutX="347.0" layoutY="248.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1c1c" />
+            <Text layoutX="214.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indem sie diesen vertrag akzeptieren (entweder durch herunterladen, verwenden, übertragen, verteilen, kopieren der software oder durch klicken auf den button, der ihr einverständnis mit diesem vertrag bekundet), stimmen sie den allgemeinen geschäftsbedingungen dieses vertrags zu." wrappingWidth="358.4110107421875">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Text>
+            <JFXButton layoutX="457.0" layoutY="578.0" onAction="#userSignup" stylesheets="@../styling/styling.css" text="Anmelden" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="676.0" layoutY="630.0" onAction="#back" prefHeight="26.0" prefWidth="79.0" stylesheets="@../styling/styling.css" text="Zurük" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXCheckBox checkedColor="#191859" layoutX="187.0" layoutY="485.0" prefHeight="10.0" prefWidth="27.0" text="   " unCheckedColor="#1e1e1e" />
+            <Line endX="100.0" layoutX="439.0" layoutY="193.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="439.0" layoutY="248.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="439.0" layoutY="300.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="439.0" layoutY="355.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="439.0" layoutY="406.0" startX="-100.0" />
+            <ImageView fitHeight="95.0" fitWidth="163.0" layoutX="26.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../png/Logo_PNG.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

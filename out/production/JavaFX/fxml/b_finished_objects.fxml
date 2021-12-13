@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="b_finished_objects">
+   <left>
+      <VBox depthTest="ENABLE" opacity="0.95" prefHeight="622.0" prefWidth="274.0" style="-fx-background-color: #6e88c4;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="83.0" prefWidth="274.0">
+               <children>
+                  <Label alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="44.0" prefHeight="46.0" prefWidth="186.0" text="TechBuild" textFill="#113f8a" wrapText="true">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="44.0" layoutY="46.0" prefHeight="10.0" prefWidth="186.0" text="trade area" textFill="#113f8a" wrapText="true">
+                     <font>
+                        <Font name="Eras Bold ITC" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#search_mater" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Search materials" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/search_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font></JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#list_mater" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Full list of materials" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/list-ingredients-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#stock_mater" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Stock of materials" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/depot_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#order_mater" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Order materials" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/order_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#build_objects" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Build objects" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/builder_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#finished_objects" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Finished objects" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/building-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#finish_objects" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Finish objects" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/inbox-5-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#info" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Info" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/info_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#exit" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Exit" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/logout_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="Commercial Pi BT" size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Line>
+            <ImageView fitHeight="155.0" fitWidth="274.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../png/SeekPng.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <AnchorPane prefHeight="632.0" prefWidth="928.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="-1.0" prefHeight="60.0" prefWidth="928.0" style="-fx-background-color: #6e88c4;">
+               <children>
+                  <Label layoutX="352.0" layoutY="15.0" text="Finished objects" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Gill Sans Ultra Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="table_finished" layoutX="20.0" layoutY="75.0" prefHeight="554.0" prefWidth="892.0" stylesheets="@../styling/styling.css">
+               <columns>
+                  <TableColumn fx:id="col_name" prefWidth="324.7999687194824" text="Name" />
+                  <TableColumn fx:id="col_area" prefWidth="329.60003662109375" text="Area" />
+                  <TableColumn fx:id="col_quantity" minWidth="0.0" prefWidth="231.199951171875" text="Quantity" />
+               </columns>
+            </TableView>
+            <HBox layoutX="34.0" layoutY="642.0" prefHeight="38.0" prefWidth="864.0" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

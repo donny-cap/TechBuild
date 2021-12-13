@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main_login">
+   <left>
+      <AnchorPane prefHeight="700.0" prefWidth="438.0" style="-fx-background-image: #f2f2f2;" BorderPane.alignment="CENTER">
+         <children>
+               <ImageView fitHeight="140.0" fitWidth="255.0" layoutX="92.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                        <Image url="@../png/Logo_PNG.png" />
+                  </image>
+               </ImageView>
+            <ImageView fitHeight="158.0" fitWidth="438.0" layoutY="555.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../png/architecture_build.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane opacity="0.95" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #b6c4e1;" BorderPane.alignment="CENTER">
+         <children>
+               <Label layoutX="160.0" layoutY="408.0" text="Benutzername" textFill="#1e1e1e">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="178.0" layoutY="478.0" text="Password" textFill="#1e1e1e">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+               <Label fx:id="wrongLogIn" layoutX="333.0" layoutY="507.0" prefHeight="19.0" prefWidth="150.0" textFill="#ec1c1c">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+            </Label>
+            <Text fill="#1e1e1e" layoutX="330.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Text>
+            <Text fill="#1e1e1e" layoutX="166.0" layoutY="156.0" lineSpacing="8.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seit unserer Eröffnung sind wir Meister unseres Handwerks. Unser Engagement für Qualitätsprodukte, außergewöhnliche Dienstleistungen und eine unvergleichliche Kundenbetreuung sorgen dafür, dass unsere Community immer wieder zurückkommt." wrappingWidth="474.4897766113281">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#39467a" layoutX="482.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="techbuild@gmail.com">
+               <font>
+                  <Font size="13.0" />
+               </font></Text>
+            <Text fill="#39467a" layoutX="503.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+996312665566">
+               <font>
+                  <Font size="13.0" />
+               </font></Text>
+            <Text fill="#1e1e1e" layoutX="294.0" layoutY="640.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account yet?" />
+            <Text fill="#1e1e1e" layoutX="168.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="oder kontaktieren Sie uns" wrappingWidth="163.338623046875">
+               <font>
+                  <Font size="13.0" />
+               </font></Text>
+            <TextField fx:id="username" layoutX="317.0" layoutY="409.0" prefHeight="26.0" prefWidth="188.0" promptText="Username" style="-fx-background-color: #b6c4e1; -fx-prompt-text-fill: #39467a;" />
+            <PasswordField fx:id="password" layoutX="316.0" layoutY="480.0" prefHeight="26.0" prefWidth="190.0" promptText="Password" style="-fx-background-color: #b6c4e1; -fx-prompt-text-fill: #39467a;" styleClass="text-field" />
+            <JFXButton layoutX="343.0" layoutY="543.0" onAction="#login" prefHeight="26.0" prefWidth="120.0" styleClass="button2" stylesheets="@../styling/styling.css" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></JFXButton>
+            <JFXButton layoutX="452.0" layoutY="622.0" onAction="#signup" styleClass="button2" stylesheets="@../styling/styling.css" text="Sign Up" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></JFXButton>
+            <Line endX="100.0" layoutX="411.0" layoutY="436.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="411.0" layoutY="506.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="411.0" layoutY="480.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="411.0" layoutY="409.0" startX="-100.0" />
+            <Line endX="-99.49996948242188" endY="-98.5" layoutX="410.0" layoutY="508.0" startX="-99.49996948242188" startY="-72.5" />
+            <Line endX="-99.49996948242188" endY="-98.5" layoutX="611.0" layoutY="508.0" startX="-99.49996948242188" startY="-72.5" />
+            <Line endX="-99.49996948242188" endY="-98.5" layoutX="410.0" layoutY="579.0" startX="-99.49996948242188" startY="-72.5" />
+            <Line endX="-99.49996948242188" endY="-98.5" layoutX="611.0" layoutY="579.0" startX="-99.49996948242188" startY="-72.5" />
+            <Text fill="#1e1e1e" layoutX="166.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bei Fragen schreiben" wrappingWidth="140.138671875">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

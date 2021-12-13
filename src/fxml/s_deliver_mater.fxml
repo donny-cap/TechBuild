@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s_deliver_mater">
+    <children>
+        <Label layoutX="230.0" layoutY="14.0" text="Deliver the oop_materials" textFill="#3d3879">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="516.0" layoutY="365.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #4c7e6c;" text="Back" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font></Button>
+        <TextField fx:id="nameField" layoutX="86.0" layoutY="316.0" prefHeight="26.0" prefWidth="237.0" promptText="name of material" />
+      <TextField fx:id="quantityField" layoutX="86.0" layoutY="358.0" prefHeight="26.0" prefWidth="115.0" promptText="quantity" />
+      <Label fx:id="wrongname" layoutX="86.0" layoutY="340.0" prefHeight="18.0" prefWidth="147.0" textFill="GREEN" />
+      <Label fx:id="wrongquantity" layoutX="201.0" layoutY="362.0" prefHeight="18.0" prefWidth="147.0" textFill="GREEN" />
+      <Button layoutX="487.0" layoutY="326.0" mnemonicParsing="false" onAction="#deliver" prefHeight="27.0" prefWidth="94.0" style="-fx-background-color: #4c7e6c;" text="Deliver" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="14.0" layoutY="320.0" text="Name" textFill="#3d3879">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="361.0" text="Quantity" textFill="#3d3879">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table_reqdeliver" layoutX="13.0" layoutY="45.0" prefHeight="254.0" prefWidth="574.0">
+         <columns>
+            <TableColumn fx:id="col_name" prefWidth="290.4000244140625" text="Name" />
+            <TableColumn fx:id="col_quantity" prefWidth="283.99993896484375" text="Quantity" />
+         </columns>
+      </TableView>
+    </children>
+</AnchorPane>

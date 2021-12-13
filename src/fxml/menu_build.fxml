@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu_build">
+   <left>
+      <AnchorPane prefHeight="700.0" prefWidth="409.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="153.0" layoutY="221.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="263.0" styleClass="button4" stylesheets="@../styling/button.css" text="Button" />
+            <VBox layoutX="76.0" layoutY="412.0" prefHeight="200.0" prefWidth="167.0">
+               <children>
+                  <JFXButton prefHeight="67.0" prefWidth="187.0" styleClass="button4" stylesheets="@../styling/button.css">
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../png/decrease.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
