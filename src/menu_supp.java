@@ -3,12 +3,12 @@ import java.io.IOException;
 public class menu_supp {
 
 
-    public void userLogOut() throws IOException {
+    public void exit() throws IOException {
         Main m = new Main();
         m.changeScene("fxml/main_login.fxml");
     }
 
-    public void list_of_materials() throws IOException {
+    public void list_mater() throws IOException {
         Main m = new Main();
         m.changeScene("fxml/s_list_mater.fxml");
     }

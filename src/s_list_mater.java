@@ -1,4 +1,5 @@
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -31,10 +32,55 @@ public class s_list_mater implements Initializable {
 
     @FXML
     private TableColumn<oop_materials, Integer> col_cost;
-// кнопка назад
-    public void back() throws IOException {
+
+    @FXML
+    void import_pdf(ActionEvent event) {
+
+    }
+
+    @FXML
+    void import_xlsx(ActionEvent event) {
+
+    }
+
+    @FXML
+    void add_path(ActionEvent event) {
+
+    }
+
+    public void exit() throws IOException {
         Main m = new Main();
-        m.changeScene("fxml/menu_supp.fxml");
+        m.changeScene("fxml/main_login.fxml");
+    }
+
+    public void list_mater() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_list_mater.fxml");
+    }
+
+    public void deliver_the_materials() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_deliver_mater.fxml");
+    }
+
+    public void required_to_deliver() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_req_to_deliver.fxml");
+    }
+
+    public void delivered_materials() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_delivered_mater.fxml");
+    }
+
+    public void percentage() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_percentage.fxml");
+    }
+
+    public void info() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_info.fxml");
     }
 
     ObservableList<oop_materials> listM;

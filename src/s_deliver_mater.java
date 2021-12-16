@@ -63,7 +63,7 @@ public class s_deliver_mater implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement statement = con.createStatement();
-        ResultSet data = statement.executeQuery("SELECT * FROM `construction_ supplier`.materials_to_deliver where name_of_material = '"+nameField.getText()+"'");
+        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.materials_to_deliver where name_of_material = '"+nameField.getText()+"'");
 
         int quantity_bd = 0;
         boolean bool = false;
@@ -87,15 +87,15 @@ public class s_deliver_mater implements Initializable {
             Date date = new Date();
             String time= new SimpleDateFormat("yyyy-MM-dd").format(date);
 
-            statement.executeUpdate("UPDATE `construction_ supplier`.`materials_to_deliver` SET `quantity_for_delivery` = quantity_for_delivery - "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
-            data = statement.executeQuery("SELECT * FROM `construction_ supplier`.`delivered_materials` where name_of_material = '"+nameField.getText()+"'");
+            statement.executeUpdate("UPDATE `course_work`.`materials_to_deliver` SET `quantity_for_delivery` = quantity_for_delivery - "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+            data = statement.executeQuery("SELECT * FROM `course_work`.`delivered_materials` where name_of_material = '"+nameField.getText()+"'");
             if(data.next()){
-                statement.executeUpdate("UPDATE `construction_ supplier`.`delivered_materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+                statement.executeUpdate("UPDATE `course_work`.`delivered_materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
             }else{
-                statement.executeUpdate("INSERT INTO `construction_ supplier`.`delivered_materials` (`name_of_material`, `quantity`, `date`) VALUES ('"+nameField.getText()+"', "+quantityField.getText()+", '"+time+"');");
+                statement.executeUpdate("INSERT INTO `course_work`.`delivered_materials` (`name_of_material`, `quantity`, `date`) VALUES ('"+nameField.getText()+"', "+quantityField.getText()+", '"+time+"');");
             }
 
-            statement.executeUpdate("UPDATE `construction_ supplier`.`materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+            statement.executeUpdate("UPDATE `course_work`.`materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
 
             UpdateTable();
             nameField.setText("");
@@ -106,9 +106,38 @@ public class s_deliver_mater implements Initializable {
         }
     }
 
-    @FXML
-    public void back() throws IOException {
+    public void exit() throws IOException {
         Main m = new Main();
-        m.changeScene("fxml/menu_supp.fxml");
+        m.changeScene("fxml/main_login.fxml");
+    }
+
+    public void list_mater() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_list_mater.fxml");
+    }
+
+    public void deliver_the_materials() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_deliver_mater.fxml");
+    }
+
+    public void required_to_deliver() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_req_to_deliver.fxml");
+    }
+
+    public void delivered_materials() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_delivered_mater.fxml");
+    }
+
+    public void percentage() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_percentage.fxml");
+    }
+
+    public void info() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_info.fxml");
     }
 }

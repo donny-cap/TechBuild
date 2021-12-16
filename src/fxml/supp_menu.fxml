@@ -3,9 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s_deliver_mater">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu_supp">
     <left>
         <VBox depthTest="ENABLE" opacity="0.95" prefHeight="622.0" prefWidth="274.0" style="-fx-background-color: #6e88c4;" BorderPane.alignment="CENTER">
             <children>
@@ -199,35 +196,11 @@
                         </Label>
                     </children>
                 </AnchorPane>
-
-                    <TextField fx:id="nameField" layoutX="257.0" layoutY="526.0" prefHeight="26.0" prefWidth="237.0" promptText="name of material" style="-fx-background-color: white; -fx-prompt-text-fill: #1e1e1e;" />
-                    <TextField fx:id="quantityField" layoutX="257.0" layoutY="575.0" prefHeight="26.0" prefWidth="138.0" promptText="quantity" style="-fx-background-color: white; -fx-prompt-text-fill: #1e1e1e;" />
-                    <Label fx:id="wrongname" layoutX="257.0" layoutY="550.0" prefHeight="18.0" prefWidth="147.0" textFill="RED" />
-                    <Label fx:id="wrongquantity" layoutX="257.0" layoutY="599.0" prefHeight="18.0" prefWidth="147.0" textFill="RED" />
-                    <TableView fx:id="table_reqdeliver" layoutX="29.0" layoutY="84.0" prefHeight="322.0" prefWidth="862.0" stylesheets="@../styling/styling.css">
-                        <columns>
-                            <TableColumn fx:id="col_name" prefWidth="433.6000175476074" text="Name" />
-                            <TableColumn fx:id="col_quantity" prefWidth="421.60003662109375" text="Quantity" />
-                        </columns>
-                    </TableView>
-            <Label layoutX="167.0" layoutY="530.0" text="Name" textFill="#113f8a">
-               <font>
-                  <Font name="Eras Bold ITC" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="167.0" layoutY="579.0" text="Quantity" textFill="#113f8a">
-               <font>
-                  <Font name="Eras Bold ITC" size="15.0" />
-               </font>
-            </Label>
-            <Line endX="100.0" layoutX="358.0" layoutY="601.0" startX="-100.0" />
-            <Line endX="100.0" layoutX="358.0" layoutY="552.0" startX="-100.0" />
-            <JFXButton layoutX="560.0" layoutY="559.0" onAction="#deliver" prefHeight="32.0" prefWidth="124.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Deliver" textFill="WHITE">
-               <font>
-                  <Font name="Commercial Pi BT" size="14.0" />
-               </font>
-            </JFXButton>
-
+                <ImageView fitHeight="313.0" fitWidth="605.0" layoutX="166.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../png/welcome.jpg" />
+                    </image>
+                </ImageView>
             </children>
         </AnchorPane>
     </right>

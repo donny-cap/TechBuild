@@ -9,7 +9,6 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ResourceBundle;
 
 public class main_login {
 
@@ -62,7 +61,7 @@ public class main_login {
                 if(ac_type.equals("Builder")){
                     m.changeScene("fxml/build_menu.fxml");
                 }else if(ac_type.equals("Supplier")){
-                    m.changeScene("fxml/menu_supp.fxml");
+                    m.changeScene("fxml/supp_menu.fxml");
             }} else { wrongLogIn.setText("Wrong username or password!" ); }
 
         }else{ wrongLogIn.setText("There is no such username!"); }
@@ -76,7 +75,7 @@ public class main_login {
         }
         else if(username.getText().equals("supp") && password.getText().equals("123")) {
             wrongLogIn.setText("Success!");
-            m.changeScene("fxml/menu_supp.fxml");
+            m.changeScene("fxml/supp_menu.fxml");
         }
         else if(username.getText().isEmpty() && password.getText().isEmpty()) {
             wrongLogIn.setText("Please enter your data.");
