@@ -2,10 +2,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-//import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -32,8 +30,6 @@ public class main_login {
     }
 
     public void login() throws Exception {
-
-
 //        checkLogin();
         test();
     }

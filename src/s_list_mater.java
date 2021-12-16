@@ -1,5 +1,4 @@
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -34,17 +33,17 @@ public class s_list_mater implements Initializable {
     private TableColumn<oop_materials, Integer> col_cost;
 
     @FXML
-    void import_pdf(ActionEvent event) {
+    void import_pdf() {
 
     }
 
     @FXML
-    void import_xlsx(ActionEvent event) {
+    void import_xlsx() {
 
     }
 
     @FXML
-    void add_path(ActionEvent event) {
+    void add_path() {
 
     }
 
