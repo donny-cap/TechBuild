@@ -14,23 +14,53 @@ public class s_percentage implements Initializable {
 
 
     @FXML
-    private Label allmatetials;
+    private Label all_mater;
 
     @FXML
-    private Label deliveredpercent;
+    private Label delivered_percent;
 
     @FXML
-    private Label requiredpercent;
+    private Label required_percent;
 
     @FXML
-    private Label requiredmat;
+    private Label required_mat;
 
     @FXML
-    private Label deliveredmat;
+    private Label delivered_mat;
 
-    public void back() throws IOException {
+    public void exit() throws IOException {
         Main m = new Main();
-        m.changeScene("fxml/menu_supp.fxml");
+        m.changeScene("fxml/main_login.fxml");
+    }
+
+    public void list_mater() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_list_mater.fxml");
+    }
+
+    public void deliver_the_materials() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_deliver_mater.fxml");
+    }
+
+    public void required_to_deliver() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_req_to_deliver.fxml");
+    }
+
+    public void delivered_materials() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_delivered_mater.fxml");
+    }
+
+    public void percentage() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_percentage.fxml");
+    }
+
+    public void info() throws IOException {
+        Main m = new Main();
+        m.changeScene("fxml/s_info.fxml");
     }
 
 
@@ -41,21 +71,21 @@ public class s_percentage implements Initializable {
             Connection con = connectionsql.getConnection();
             assert con != null;
             Statement st = con.createStatement();
-            ResultSet data = st.executeQuery("SELECT sum(quantity_for_delivery) FROM `construction_ supplier`.materials_to_deliver;");
+            ResultSet data = st.executeQuery("SELECT sum(quantity_for_delivery) FROM `course_work`.materials_to_deliver;");
             while(data.next()){
                 q_to_deliver = data.getInt("sum(quantity_for_delivery)");
             }
 
-            data = st.executeQuery("SELECT sum(quantity) FROM `construction_ supplier`.delivered_materials;");
+            data = st.executeQuery("SELECT sum(quantity) FROM `course_work`.delivered_materials;");
             while(data.next()){
                 q_delivered = data.getInt("sum(quantity)");
             }
             int all = q_delivered + q_to_deliver;
-            allmatetials.setText(Integer.toString(all));
-            deliveredpercent.setText(Integer.toString((100*q_delivered)/all));
-            deliveredmat.setText(Integer.toString(q_delivered));
-            requiredpercent.setText(Integer.toString((100*q_to_deliver)/all));
-            requiredmat.setText(Integer.toString(q_to_deliver));
+            all_mater.setText(Integer.toString(all));
+            delivered_percent.setText(Integer.toString((100*q_delivered)/all));
+            delivered_mat.setText(Integer.toString(q_delivered));
+            required_percent.setText(Integer.toString((100*q_to_deliver)/all));
+            required_mat.setText(Integer.toString(q_to_deliver));
 
 
 
