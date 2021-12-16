@@ -1,87 +1,297 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4c7e6c;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s_info">
-    <children>
-        <Label layoutX="71.0" layoutY="14.0" text="Welcome to normative-reference" textFill="#3d3879">
-            <font>
-                <Font name="System Italic" size="32.0" />
-            </font>
-        </Label>
-        <Button layoutX="478.0" layoutY="346.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #4c7e6c;" text="Back" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font></Button>
-      <Label layoutX="71.0" layoutY="90.0" text="dear supplier!" textFill="#3d3879">
-         <font>
-            <Font name="System Italic" size="32.0" />
-         </font>
-      </Label>
-      <Label layoutX="71.0" layoutY="52.0" text="information section, " textFill="#3d3879">
-         <font>
-            <Font name="System Italic" size="32.0" />
-         </font>
-      </Label>
-      <Label layoutX="51.0" layoutY="146.0" text="The mission of our company:">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="87.0" layoutY="166.0" text="Provide a platform for convenient and reliable " textFill="WHITE">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="87.0" layoutY="190.0" text="communication between suppliers and builders." textFill="WHITE">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="51.0" layoutY="220.0" text="Our advantages:">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="86.0" layoutY="240.0" text="Automated data accounting system" textFill="WHITE">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="86.0" layoutY="260.0" text="Automated customer relationship management system " textFill="WHITE">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="84.0" layoutY="280.0" text="Automated  management system" textFill="WHITE">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="84.0" layoutY="300.0" text="user-friendly interface" textFill="WHITE">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="84.0" layoutY="320.0" text="Large data storage and processing" textFill="WHITE">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="110.0" fitWidth="97.0" layoutX="3.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../png/buildings.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="109.0" fitWidth="97.0" layoutX="361.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../png/building-construction.png" />
-         </image>
-      </ImageView>
-    </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s_info">
+    <left>
+        <VBox depthTest="ENABLE" opacity="0.95" prefHeight="622.0" prefWidth="274.0" style="-fx-background-color: #6e88c4;" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="83.0" prefWidth="274.0">
+                    <children>
+                        <Label alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="44.0" prefHeight="46.0" prefWidth="186.0" text="TechBuild" textFill="#113f8a" wrapText="true">
+                            <font>
+                                <Font name="Copperplate Gothic Bold" size="32.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="44.0" layoutY="46.0" prefHeight="10.0" prefWidth="186.0" text="trade area" textFill="#113f8a" wrapText="true">
+                            <font>
+                                <Font name="Eras Bold ITC" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </VBox.margin>
+                </Line>
+                <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#list_mater" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Full list of materials" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../png/list-ingredients-64.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Commercial Pi BT" size="13.0" />
+                    </font>
+                </JFXButton>
+                <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </VBox.margin>
+                </Line>
+                <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#required_to_deliver" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Required  to deliver" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../png/rules_book_50px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Commercial Pi BT" size="13.0" />
+                    </font></JFXButton>
+                <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </VBox.margin>
+                </Line>
+                <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#deliver_the_materials" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Deliver the materials" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../png/depot_50px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Commercial Pi BT" size="13.0" />
+                    </font>
+                </JFXButton>
+                <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </VBox.margin>
+                </Line>
+                <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#delivered_materials" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Delivered materials" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../png/order_50px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Commercial Pi BT" size="13.0" />
+                    </font>
+                </JFXButton>
+                <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </VBox.margin>
+                </Line>
+                <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#percentage" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Persentage" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../png/inbox-5-64.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Commercial Pi BT" size="13.0" />
+                    </font>
+                </JFXButton>
+                <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </VBox.margin>
+                </Line>
+                <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#info" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Info" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../png/info_50px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Commercial Pi BT" size="13.0" />
+                    </font>
+                </JFXButton>
+                <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </VBox.margin>
+                </Line>
+                <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#exit" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Exit" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../png/logout_50px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Commercial Pi BT" size="13.0" />
+                    </font>
+                </JFXButton>
+                <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </VBox.margin>
+                </Line>
+                <ImageView fitHeight="155.0" fitWidth="274.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../png/SeekPng.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets top="200.0" />
+                    </VBox.margin>
+                </ImageView>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane prefHeight="632.0" prefWidth="928.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane layoutX="-1.0" prefHeight="60.0" prefWidth="928.0" style="-fx-background-color: #6e88c4;">
+                    <children>
+                        <Label layoutX="436.0" layoutY="15.0" text="Info" textFill="WHITE">
+                            <font>
+                                <Font name="Gill Sans Ultra Bold" size="22.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <ImageView fitHeight="152.0" fitWidth="169.0" layoutX="378.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../png/Logo_PNG.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="255.0" layoutY="174.0" prefHeight="31.0" prefWidth="418.0" text="Trading Platform for Construction Companies" textFill="#1e1e1e">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Label>
+                <Label layoutX="421.0" layoutY="205.0" prefHeight="31.0" prefWidth="85.0" text="Version 1.0.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="301.0" layoutY="228.0" prefHeight="31.0" prefWidth="308.0" text="Copyright © 2021 TechBuild. All Rights Reserved">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="172.0" layoutY="288.0" text="A  Program  for manage  production of T&amp;R Software Solution  (PVT) LTD,">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="172.0" layoutY="314.0" text="This software provides to manage daily operations of sales  and builders">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="261.0" layoutY="365.0" text="And this Course Work for 3rd semester by AIN-1-20">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="151.0" layoutY="420.0" text="These are the facilities of this software,">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="152.0" layoutY="448.0" prefHeight="31.0" prefWidth="342.0" text="- Automated data accounting system">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="152.0" layoutY="479.0" prefHeight="31.0" prefWidth="342.0" text="- Manage Customers">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="152.0" layoutY="510.0" prefHeight="31.0" prefWidth="342.0" text="- Manage Items">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="152.0" layoutY="541.0" prefHeight="31.0" prefWidth="342.0" text="- Large data storage and processing">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="151.0" layoutY="572.0" prefHeight="31.0" prefWidth="368.0" text="- View Cashiers Progress &amp; Much More.">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="292.0" layoutY="645.0" text="Contact Us">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="411.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../png/Facebook.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="565.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../png/instergram.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="615.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../png/LinkedIn.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="517.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../png/Youtube.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="464.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../png/Tweeter.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
