@@ -19,7 +19,7 @@ public class connectionsql {
             Connection con = getConnection();
             assert con != null;
             Statement create = con.createStatement();
-            ResultSet data = create.executeQuery("SELECT * FROM `course_work`.user where password = '2468a';");
+            ResultSet data = create.executeQuery("SELECT * FROM `course_work`.user where password = '';");
 
             while (data.next()) {
                 String name = data.getString("firstname");
@@ -57,7 +57,7 @@ public class connectionsql {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                list.add(new oop_materials(rs.getString("name_of_material"), rs.getString("purpose_of_use"), rs.getString("name_of_company"), rs.getString("type_of_material"), rs.getInt("quantity_of-materials"), rs.getInt("cost")));
+                list.add(new oop_materials(rs.getInt("number"), rs.getString("name"), rs.getString("manufacturer"), rs.getString("type"), rs.getInt("quantity"), rs.getInt("weight (kg)"), rs.getInt("cost")));
             }
             ps.close();
             conn.close();
@@ -72,7 +72,7 @@ public class connectionsql {
         ObservableList<oop_objects> list = FXCollections.observableArrayList();
         try {
             assert conn != null;
-            PreparedStatement ps = conn.prepareStatement("select * from `course_work`.show_objects_for_construction;");
+            PreparedStatement ps = conn.prepareStatement("select * from `course_work`.objects_constructing;");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -95,7 +95,7 @@ public class connectionsql {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                list.add(new oop_finish_objects(rs.getString("objects"), rs.getString("area"), rs.getInt("quantity_of_finished")));
+                list.add(new oop_finish_objects( rs.getInt("number"), rs.getString("objects"), rs.getString("company"), rs.getString("address"), rs.getInt("square (m2)"), rs.getDate("date")));
             }
             ps.close();
             conn.close();
@@ -133,7 +133,7 @@ public class connectionsql {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                list.add(new oop_del_mater( rs.getString("name_of_material"), rs.getInt("quantity"), rs.getString("date")));
+                list.add(new oop_del_mater(rs.getInt("number"), rs.getString("name"), rs.getString("manufacturer"), rs.getInt("quantity"),rs.getInt("weight (kg)"), rs.getDate("date")));
             }
             ps.close();
             conn.close();

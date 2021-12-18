@@ -1,37 +1,65 @@
+import java.sql.Date;
+
 public class oop_finish_objects {
 
-    int quantity;
-    String name, area;
+    int number, square;
+    String objects, company, address;
+    Date date;
 
-
-    public oop_finish_objects(String name, String area, int quantity) {
-        this.name = name;
-        this.area = area;
-        this.quantity = quantity;
+    public oop_finish_objects(int number, String objects, String company, String address, int square, Date date) {
+        this.number = number;
+        this.square = square;
+        this.objects = objects;
+        this.company = company;
+        this.address = address;
+        this.date = date;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getNumber() {
+        return number;
     }
 
-    public String getName() {
-        return name;
+    public int getSquare() {
+        return square;
     }
 
-    public String getArea() {
-        return area;
+    public String getObjects() {
+        return objects;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public String getCompany() {
+        return company;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getAddress() {
+        return address;
     }
 
-    public void setArea(String area) {
-        this.area = area;
+    public Date getDate() {
+        return date;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setSquare(int square) {
+        this.square = square;
+    }
+
+    public void setObjects(String objects) {
+        this.objects = objects;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

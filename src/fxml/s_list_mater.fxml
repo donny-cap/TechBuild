@@ -3,6 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,8 +14,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s_list_mater">
    <left>
       <VBox depthTest="ENABLE" opacity="0.95" prefHeight="622.0" prefWidth="274.0" style="-fx-background-color: #6e88c4;" BorderPane.alignment="CENTER">
@@ -199,16 +199,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView fx:id="table_materials" layoutX="6.0" layoutY="71.0" prefHeight="558.0" prefWidth="914.0" stylesheets="@../styling/styling.css">
-               <columns>
-                  <TableColumn fx:id="col_name" prefWidth="129.60000306367874" text="Name" />
-                  <TableColumn fx:id="col_purpose" prefWidth="241.6000518798828" text="Purpose of use" />
-                  <TableColumn fx:id="col_madeby" prefWidth="156.79998779296875" text="Made by" />
-                  <TableColumn fx:id="col_type" prefWidth="131.199951171875" text="Type" />
-                  <TableColumn fx:id="col_quantity" prefWidth="121.5999755859375" text="Quantity" />
-                  <TableColumn fx:id="col_cost" prefWidth="130.4000244140625" text="Cost" />
-               </columns>
-            </TableView>
             <HBox layoutX="34.0" layoutY="642.0" prefHeight="38.0" prefWidth="864.0">
                <children>
                   <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#import_pdf" prefHeight="46.0" prefWidth="220.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Import to PDF" textFill="WHITE">
@@ -267,6 +257,17 @@
                   </JFXButton>
                </children>
             </HBox>
+            <TableView fx:id="table_materials" layoutX="9.0" layoutY="71.0" prefHeight="558.0" prefWidth="914.0" stylesheets="@../styling/styling.css">
+               <columns>
+                  <TableColumn fx:id="col_num" prefWidth="41.60000705718994" text="№" />
+                  <TableColumn fx:id="col_name" prefWidth="293.5999870300293" text="Name" />
+                  <TableColumn fx:id="col_manuf" prefWidth="154.4000244140625" text="Manufacturer" />
+                  <TableColumn fx:id="col_type" prefWidth="151.199951171875" text="Type" />
+                  <TableColumn fx:id="col_quantity" prefWidth="93.5999755859375" text="Quantity" />
+                  <TableColumn fx:id="col_weight" prefWidth="85.5999755859375" text="Weight (kg)" />
+                  <TableColumn fx:id="col_cost" prefWidth="84.0" text="Cost" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </right>

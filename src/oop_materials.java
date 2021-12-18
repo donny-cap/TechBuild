@@ -1,20 +1,28 @@
 public class oop_materials {
 
-    int quantity, cost;
-    String name, purpose, madeby, type;
+    int number, quantity, weight, cost;
+    String name, manufacturer, type;
 
-    public oop_materials(String name, String purpose, String madeby, String type, int quantity, int cost) {
-        this.quantity = quantity;
-        this.cost = cost;
+    public oop_materials(int number, String name, String manufacturer, String type, int quantity, int weight, int cost) {
+        this.number = number;
         this.name = name;
-        this.purpose = purpose;
-        this.madeby = madeby;
+        this.manufacturer = manufacturer;
         this.type = type;
+        this.quantity = quantity;
+        this.weight = weight;
+        this.cost = cost;
     }
 
+    public int getNumber() {
+        return number;
+    }
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 
     public int getCost() {
@@ -25,20 +33,24 @@ public class oop_materials {
         return name;
     }
 
-    public String getPurpose() {
-        return purpose;
-    }
-
-    public String getMadeby() {
-        return madeby;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
     public String getType() {
         return type;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public void setCost(int cost) {
@@ -49,16 +61,11 @@ public class oop_materials {
         this.name = name;
     }
 
-    public void setPurpose(String purpose) {
-        this.purpose = purpose;
-    }
-
-    public void setMadeby(String madeby) {
-        this.madeby = madeby;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public void setType(String type) {
         this.type = type;
     }
-
 }

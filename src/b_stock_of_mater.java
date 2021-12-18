@@ -91,9 +91,9 @@ public class b_stock_of_mater implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement st = con.createStatement();
-        ResultSet data = st.executeQuery("SELECT * FROM `course_work`.materials order by (`quantity_of-materials` + 0) desc;");
+        ResultSet data = st.executeQuery("SELECT * FROM `course_work`.materials order by (`quantity` + 0) desc;");
         while (data.next()) {
-            list.add(new oop_materials(data.getString("name_of_material"), data.getString("purpose_of_use"), data.getString("name_of_company"), data.getString("type_of_material"), data.getInt("quantity_of-materials"), data.getInt("cost")));
+            list.add(new oop_materials(data.getInt("number"), data.getString("name"), data.getString("manufacturer"), data.getString("type"), data.getInt("quantity"), data.getInt("weight (kg)"), data.getInt("cost")));
         }
         table_materials.setItems(list);
 
@@ -109,9 +109,9 @@ public class b_stock_of_mater implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement st = con.createStatement();
-        ResultSet data = st.executeQuery("SELECT * FROM `course_work`.materials order by (`quantity_of-materials` + 0);");
+        ResultSet data = st.executeQuery("SELECT * FROM `course_work`.materials order by (`quantity` + 0);");
         while (data.next()) {
-            list.add(new oop_materials(data.getString("name_of_material"), data.getString("purpose_of_use"), data.getString("name_of_company"), data.getString("type_of_material"), data.getInt("quantity_of-materials"), data.getInt("cost")));
+            list.add(new oop_materials(data.getInt("number"), data.getString("name"), data.getString("manufacturer"), data.getString("type"), data.getInt("quantity"), data.getInt("weight (kg)"), data.getInt("cost")));
         }
         table_materials.setItems(list);
 
@@ -127,9 +127,9 @@ public class b_stock_of_mater implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement st = con.createStatement();
-        ResultSet data = st.executeQuery("SELECT * FROM `course_work`.materials where `quantity_of-materials` = 0;");
+        ResultSet data = st.executeQuery("SELECT * FROM `course_work`.materials where `quantity` = 0;");
         while (data.next()) {
-            list.add(new oop_materials(data.getString("name_of_material"), data.getString("purpose_of_use"), data.getString("name_of_company"), data.getString("type_of_material"), data.getInt("quantity_of-materials"), data.getInt("cost")));
+            list.add(new oop_materials(data.getInt("number"), data.getString("name"), data.getString("manufacturer"), data.getString("type"), data.getInt("quantity"), data.getInt("weight (kg)"), data.getInt("cost")));
         }
         table_materials.setItems(list);
 

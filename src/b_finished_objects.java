@@ -7,6 +7,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class b_finished_objects implements Initializable {
@@ -15,13 +16,25 @@ public class b_finished_objects implements Initializable {
     private TableView<oop_finish_objects> table_finished;
 
     @FXML
+    private TableColumn<oop_finish_objects, String> col_address;
+
+    @FXML
+    private TableColumn<oop_finish_objects, String> col_company;
+
+    @FXML
+    private TableColumn<oop_finish_objects, Date> col_date;
+
+    @FXML
     private TableColumn<oop_finish_objects, String> col_name;
 
     @FXML
-    private TableColumn<oop_finish_objects, String> col_area;
+    private TableColumn<oop_finish_objects, Integer> col_num;
 
     @FXML
-    private TableColumn<oop_finish_objects, Integer> col_quantity;
+    private TableColumn<oop_finish_objects, Integer> col_square;
+
+    public b_finished_objects() {
+    }
 
 
     @FXML
@@ -91,9 +104,12 @@ public class b_finished_objects implements Initializable {
     }
 
     public void UpdateTable() throws Exception {
-        col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        col_area.setCellValueFactory(new PropertyValueFactory<>("area"));
-        col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        col_num.setCellValueFactory(new PropertyValueFactory<>("number"));
+        col_name.setCellValueFactory(new PropertyValueFactory<>("objects"));
+        col_company.setCellValueFactory(new PropertyValueFactory<>("company"));
+        col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
+        col_square.setCellValueFactory(new PropertyValueFactory<>("square"));
+        col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         listM = connectionsql.getDatafobjects();
         table_finished.setItems(listM);

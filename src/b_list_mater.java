@@ -15,22 +15,26 @@ public class b_list_mater implements Initializable {
     private TableView<oop_materials> table_materials;
 
     @FXML
+    private TableColumn<oop_materials, Integer> col_cost;
+
+    @FXML
+    private TableColumn<oop_materials, String> col_manuf;
+
+    @FXML
     private TableColumn<oop_materials, String> col_name;
 
     @FXML
-    private TableColumn<oop_materials, String> col_purpose;
-
-    @FXML
-    private TableColumn<oop_materials, String> col_madeby;
-
-    @FXML
-    private TableColumn<oop_materials, String> col_type;
+    private TableColumn<oop_materials, Integer> col_num;
 
     @FXML
     private TableColumn<oop_materials, Integer> col_quantity;
 
     @FXML
-    private TableColumn<oop_materials, Integer> col_cost;
+    private TableColumn<oop_materials, String> col_type;
+
+    @FXML
+    private TableColumn<oop_materials, Integer> col_weight;
+
 
     @FXML
     void build_objects() throws IOException {
@@ -113,11 +117,12 @@ public class b_list_mater implements Initializable {
     }
 
     public void UpdateTable() throws Exception {
+        col_num.setCellValueFactory(new PropertyValueFactory<>("number"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        col_purpose.setCellValueFactory(new PropertyValueFactory<>("purpose"));
-        col_madeby.setCellValueFactory(new PropertyValueFactory<>("madeby"));
+        col_manuf.setCellValueFactory(new PropertyValueFactory<>("manufacturer"));
         col_type.setCellValueFactory(new PropertyValueFactory<>("type"));
         col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        col_weight.setCellValueFactory(new PropertyValueFactory<>("weight"));
         col_cost.setCellValueFactory(new PropertyValueFactory<>("cost"));
 
         listM = connectionsql.getDatamaterials();

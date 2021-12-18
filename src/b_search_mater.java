@@ -75,22 +75,25 @@ public class b_search_mater implements Initializable {
     private TableView<oop_materials> table_materials;
 
     @FXML
+    private TableColumn<oop_materials, Integer> col_cost;
+
+    @FXML
+    private TableColumn<oop_materials, String> col_manuf;
+
+    @FXML
     private TableColumn<oop_materials, String> col_name;
 
     @FXML
-    private TableColumn<oop_materials, String> col_purpose;
-
-    @FXML
-    private TableColumn<oop_materials, String> col_madeby;
-
-    @FXML
-    private TableColumn<oop_materials, String> col_type;
+    private TableColumn<oop_materials, Integer> col_num;
 
     @FXML
     private TableColumn<oop_materials, Integer> col_quantity;
 
     @FXML
-    private TableColumn<oop_materials, Integer> col_cost;
+    private TableColumn<oop_materials, String> col_type;
+
+    @FXML
+    private TableColumn<oop_materials, Integer> col_weight;
 
     ObservableList<oop_materials> listM;
     ObservableList<oop_materials> dataList;
@@ -109,11 +112,12 @@ public class b_search_mater implements Initializable {
     }
 
     public void UpdateTable() throws Exception {
+        col_num.setCellValueFactory(new PropertyValueFactory<>("number"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        col_purpose.setCellValueFactory(new PropertyValueFactory<>("purpose"));
-        col_madeby.setCellValueFactory(new PropertyValueFactory<>("madeby"));
+        col_manuf.setCellValueFactory(new PropertyValueFactory<>("manufacturer"));
         col_type.setCellValueFactory(new PropertyValueFactory<>("type"));
         col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        col_weight.setCellValueFactory(new PropertyValueFactory<>("weight"));
         col_cost.setCellValueFactory(new PropertyValueFactory<>("cost"));
 
         listM = connectionsql.getDatamaterials();
@@ -122,11 +126,12 @@ public class b_search_mater implements Initializable {
 
     @FXML
     void search_user() {
+        col_num.setCellValueFactory(new PropertyValueFactory<>("number"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        col_purpose.setCellValueFactory(new PropertyValueFactory<>("purpose"));
-        col_madeby.setCellValueFactory(new PropertyValueFactory<>("madeby"));
+        col_manuf.setCellValueFactory(new PropertyValueFactory<>("manufacturer"));
         col_type.setCellValueFactory(new PropertyValueFactory<>("type"));
         col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        col_weight.setCellValueFactory(new PropertyValueFactory<>("weight"));
         col_cost.setCellValueFactory(new PropertyValueFactory<>("cost"));
 
         dataList = connectionsql.getDatamaterials();
@@ -140,18 +145,19 @@ public class b_search_mater implements Initializable {
             String lowerCaseFilter = newValue.toLowerCase();
 
             if (materials.getName().toLowerCase().contains(lowerCaseFilter)) {
-                return true; // Filter matches name
-            } else if (materials.getType().toLowerCase().contains(lowerCaseFilter)) {
-                return true; // Filter matches type
-            }else if (materials.getMadeby().toLowerCase().contains(lowerCaseFilter)) {
-                return true; // Filter matches madeby
-            }else if (materials.getPurpose().toLowerCase().contains(lowerCaseFilter)) {
-                return true; // Filter matches purpose
-            }else // Does not match.
-                if (String.valueOf(materials.getQuantity()).contains(lowerCaseFilter)) {
-                return true; // Filter matches quantity
+                return true;
+            } else if (materials.getManufacturer().toLowerCase().contains(lowerCaseFilter)) {
+                return true;
+            }else if (materials.getType().toLowerCase().contains(lowerCaseFilter)) {
+                return true;
+            }else if (String.valueOf(materials.getQuantity()).contains(lowerCaseFilter)) {
+                return true;
+            }else if (String.valueOf(materials.getWeight()).contains(lowerCaseFilter)) {
+                return true;
+            }else if (String.valueOf(materials.getCost()).contains(lowerCaseFilter)) {
+                return true;
             }
-            else return String.valueOf(materials.getCost()).contains(lowerCaseFilter);// Filter matches cost
+            else return String.valueOf(materials.getNumber()).contains(lowerCaseFilter);
         }));
         SortedList<oop_materials> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(table_materials.comparatorProperty());
