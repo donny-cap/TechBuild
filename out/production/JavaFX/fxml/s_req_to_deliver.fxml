@@ -198,10 +198,13 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView fx:id="table_reqdeliver" layoutX="30.0" layoutY="83.0" prefHeight="343.0" prefWidth="856.0" stylesheets="@../styling/styling.css">
+            <TableView fx:id="table_reqdeliver" layoutX="16.0" layoutY="83.0" prefHeight="402.0" prefWidth="894.0" stylesheets="@../styling/styling.css">
                <columns>
-                  <TableColumn fx:id="col_name" prefWidth="424.0000114440918" text="Name" />
-                  <TableColumn fx:id="col_quantity" prefWidth="423.99993896484375" text="Quantity" />
+                  <TableColumn fx:id="col_name" prefWidth="315.9999656677246" text="Name" />
+                  <TableColumn fx:id="col_manufacturer" prefWidth="201.5999755859375" text="Manufacturer" />
+                  <TableColumn fx:id="col_quantity" prefWidth="124.800048828125" text="Quantity" />
+                  <TableColumn fx:id="col_cost" prefWidth="118.39996337890625" text="Cost" />
+                  <TableColumn fx:id="col_date" prefWidth="126.4000244140625" text="Date" />
                </columns>
             </TableView>
          </children>

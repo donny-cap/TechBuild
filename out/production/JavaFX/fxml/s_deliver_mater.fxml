@@ -200,33 +200,36 @@
                     </children>
                 </AnchorPane>
 
-                    <TextField fx:id="nameField" layoutX="257.0" layoutY="526.0" prefHeight="26.0" prefWidth="237.0" promptText="name of material" style="-fx-background-color: white; -fx-prompt-text-fill: #1e1e1e;" />
-                    <TextField fx:id="quantityField" layoutX="257.0" layoutY="575.0" prefHeight="26.0" prefWidth="138.0" promptText="quantity" style="-fx-background-color: white; -fx-prompt-text-fill: #1e1e1e;" />
-                    <Label fx:id="wrongname" layoutX="257.0" layoutY="550.0" prefHeight="18.0" prefWidth="147.0" textFill="RED" />
-                    <Label fx:id="wrongquantity" layoutX="257.0" layoutY="599.0" prefHeight="18.0" prefWidth="147.0" textFill="RED" />
-                    <TableView fx:id="table_reqdeliver" layoutX="29.0" layoutY="84.0" prefHeight="322.0" prefWidth="862.0" stylesheets="@../styling/styling.css">
-                        <columns>
-                            <TableColumn fx:id="col_name" prefWidth="433.6000175476074" text="Name" />
-                            <TableColumn fx:id="col_quantity" prefWidth="421.60003662109375" text="Quantity" />
-                        </columns>
-                    </TableView>
-            <Label layoutX="167.0" layoutY="530.0" text="Name" textFill="#113f8a">
+                    <TextField fx:id="nameField" layoutX="259.0" layoutY="543.0" prefHeight="26.0" prefWidth="237.0" promptText="name of material" style="-fx-background-color: white; -fx-prompt-text-fill: #1e1e1e;" />
+                    <TextField fx:id="quantityField" layoutX="259.0" layoutY="592.0" prefHeight="26.0" prefWidth="138.0" promptText="quantity" style="-fx-background-color: white; -fx-prompt-text-fill: #1e1e1e;" />
+                    <Label fx:id="wrongname" layoutX="259.0" layoutY="567.0" prefHeight="18.0" prefWidth="147.0" textFill="RED" />
+                    <Label fx:id="wrongquantity" layoutX="259.0" layoutY="616.0" prefHeight="18.0" prefWidth="147.0" textFill="RED" />
+            <Label layoutX="169.0" layoutY="547.0" text="Name" textFill="#113f8a">
                <font>
                   <Font name="Eras Bold ITC" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="167.0" layoutY="579.0" text="Quantity" textFill="#113f8a">
+            <Label layoutX="169.0" layoutY="596.0" text="Quantity" textFill="#113f8a">
                <font>
                   <Font name="Eras Bold ITC" size="15.0" />
                </font>
             </Label>
-            <Line endX="100.0" layoutX="358.0" layoutY="601.0" startX="-100.0" />
-            <Line endX="100.0" layoutX="358.0" layoutY="552.0" startX="-100.0" />
-            <JFXButton layoutX="560.0" layoutY="559.0" onAction="#deliver" prefHeight="32.0" prefWidth="124.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Deliver" textFill="WHITE">
+            <Line endX="100.0" layoutX="360.0" layoutY="618.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="360.0" layoutY="569.0" startX="-100.0" />
+            <JFXButton layoutX="562.0" layoutY="576.0" onAction="#deliver" prefHeight="32.0" prefWidth="124.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Deliver" textFill="WHITE">
                <font>
                   <Font name="Commercial Pi BT" size="14.0" />
                </font>
             </JFXButton>
+            <TableView fx:id="table_reqdeliver" layoutX="11.0" layoutY="75.0" prefHeight="438.0" prefWidth="906.0" stylesheets="@../styling/styling.css">
+               <columns>
+                  <TableColumn fx:id="col_name" prefWidth="315.9999656677246" text="Name" />
+                  <TableColumn fx:id="col_manufacturer" prefWidth="201.5999755859375" text="Manufacturer" />
+                  <TableColumn fx:id="col_quantity" prefWidth="124.800048828125" text="Quantity" />
+                  <TableColumn fx:id="col_cost" prefWidth="124.79998779296875" text="Cost" />
+                  <TableColumn fx:id="col_date" prefWidth="131.2000732421875" text="Date" />
+               </columns>
+            </TableView>
 
             </children>
         </AnchorPane>

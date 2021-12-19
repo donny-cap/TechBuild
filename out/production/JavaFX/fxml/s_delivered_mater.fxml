@@ -191,18 +191,21 @@
          <children>
             <AnchorPane layoutX="-1.0" prefHeight="60.0" prefWidth="928.0" style="-fx-background-color: #6e88c4;">
                <children>
-                  <Label layoutX="223.0" layoutY="15.0" text="Welcome to your personal account!" textFill="WHITE">
+                  <Label layoutX="328.0" layoutY="15.0" text="Delivered materials" textFill="WHITE">
                      <font>
                         <Font name="Gill Sans Ultra Bold" size="22.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <TableView fx:id="table_delivmat" layoutX="14.0" layoutY="80.0" prefHeight="376.0" prefWidth="892.0" stylesheets="@../styling/styling.css">
+            <TableView fx:id="table_delivmat" layoutX="14.0" layoutY="80.0" prefHeight="473.0" prefWidth="892.0" stylesheets="@../styling/styling.css">
                <columns>
-                  <TableColumn fx:id="col_name" prefWidth="328.800030708313" text="Name" />
-                  <TableColumn fx:id="col_quantity" prefWidth="279.199951171875" text="Quantity" />
-                  <TableColumn fx:id="col_date" prefWidth="278.40008544921875" text="Date" />
+                  <TableColumn fx:id="col_num" prefWidth="36.799988746643066" text="№" />
+                  <TableColumn fx:id="col_name" prefWidth="294.4000053405762" text="Name" />
+                  <TableColumn fx:id="col_manufacturer" prefWidth="168.0" text="Manufacturer" />
+                  <TableColumn fx:id="col_quantity" prefWidth="149.60003662109375" text="Quantity" />
+                  <TableColumn fx:id="col_weight" prefWidth="114.39990234375" text="Weight (kg)" />
+                  <TableColumn fx:id="col_date" prefWidth="124.0" text="Date" />
                </columns>
             </TableView>
          </children>
