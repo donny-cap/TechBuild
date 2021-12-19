@@ -72,11 +72,11 @@ public class connectionsql {
         ObservableList<oop_objects> list = FXCollections.observableArrayList();
         try {
             assert conn != null;
-            PreparedStatement ps = conn.prepareStatement("select * from `course_work`.objects_constructing;");
+            PreparedStatement ps = conn.prepareStatement("select * from `course_work`.`objects_constructing`;");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                list.add(new oop_objects(rs.getString("Name_of_areas"), rs.getInt("quantity_in_areas"), rs.getString("destination")));
+                list.add(new oop_objects(rs.getInt("number"), rs.getString("objects"), rs.getString("company"), rs.getString("address"), rs.getInt("square (m2)")));
             }
             ps.close();
             conn.close();
@@ -110,11 +110,11 @@ public class connectionsql {
         ObservableList<oop_req_deliver> list = FXCollections.observableArrayList();
         try {
             assert conn != null;
-            PreparedStatement ps = conn.prepareStatement("select * from `course_work`.`materials_to_deliver`;");
+            PreparedStatement ps = conn.prepareStatement("select * from `course_work`.`materials_to_delivery`;");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                list.add(new oop_req_deliver(rs.getInt("quantity_for_delivery"), rs.getString("name_of_material") ));
+                list.add(new oop_req_deliver(rs.getString("name"), rs.getString("manufacturer"), rs.getInt("quantity"), rs.getInt("cost"),rs.getDate("date") ));
             }
             ps.close();
             conn.close();

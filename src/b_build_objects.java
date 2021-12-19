@@ -15,13 +15,20 @@ public class b_build_objects implements Initializable {
     private TableView<oop_objects> table_objects;
 
     @FXML
-    private TableColumn<oop_objects, String> col_name;
+    private TableColumn<oop_objects, String> col_address;
 
     @FXML
-    private TableColumn<oop_objects, Integer> col_quantity;
+    private TableColumn<oop_objects, String> col_company;
 
     @FXML
-    private TableColumn<oop_objects, String> col_destination;
+    private TableColumn<oop_objects, Integer> col_num;
+
+    @FXML
+    private TableColumn<oop_objects, String> col_objects;
+
+    @FXML
+    private TableColumn<oop_objects, Integer> col_square;
+
 
     @FXML
     void build_objects() throws IOException {
@@ -89,9 +96,11 @@ public class b_build_objects implements Initializable {
     }
 
     public void UpdateTable() throws Exception {
-        col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        col_destination.setCellValueFactory(new PropertyValueFactory<>("destination"));
+        col_num.setCellValueFactory(new PropertyValueFactory<>("number"));
+        col_objects.setCellValueFactory(new PropertyValueFactory<>("objects"));
+        col_company.setCellValueFactory(new PropertyValueFactory<>("company"));
+        col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
+        col_square.setCellValueFactory(new PropertyValueFactory<>("square"));
 
         listM = connectionsql.getDataobjects();
         table_objects.setItems(listM);

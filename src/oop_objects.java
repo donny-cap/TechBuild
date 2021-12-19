@@ -1,32 +1,52 @@
 public class oop_objects {
-    int quantity;
-    String name,destination;
+    int number, square;
+    String objects,company,address;
 
-    public oop_objects(String name, int quantity, String destination) {
-        this.name = name;
-        this.quantity = quantity;
-        this.destination = destination;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public int getQuantity() {
-        return quantity;
-    }
-    public String getDestination() {
-        return destination;
+    public oop_objects(int number, String objects, String company, String address, int square) {
+        this.number = number;
+        this.square = square;
+        this.objects = objects;
+        this.company = company;
+        this.address = address;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getNumber() {
+        return number;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public int getSquare() {
+        return square;
     }
 
-    public void setDestination(String destination) {
-        this.destination = destination;
+    public String getObjects() {
+        return objects;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setSquare(int square) {
+        this.square = square;
+    }
+
+    public void setObjects(String objects) {
+        this.objects = objects;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

@@ -7,12 +7,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class s_req_deliver implements Initializable {
 
     @FXML
     private TableView<oop_req_deliver> table_reqdeliver;
+
+    @FXML
+    private TableColumn<oop_req_deliver, Integer> col_cost;
+
+    @FXML
+    private TableColumn<oop_req_deliver, Date> col_date;
+
+    @FXML
+    private TableColumn<oop_req_deliver, String> col_manufacturer;
 
     @FXML
     private TableColumn<oop_req_deliver, String> col_name;
@@ -69,7 +79,10 @@ public class s_req_deliver implements Initializable {
 
     public void UpdateTable() throws Exception {
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        col_manufacturer.setCellValueFactory(new PropertyValueFactory<>("manufacturer"));
         col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        col_cost.setCellValueFactory(new PropertyValueFactory<>("cost"));
+        col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         listM = connectionsql.getReqdeliver();
         table_reqdeliver.setItems(listM);

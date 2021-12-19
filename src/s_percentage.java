@@ -71,9 +71,9 @@ public class s_percentage implements Initializable {
             Connection con = connectionsql.getConnection();
             assert con != null;
             Statement st = con.createStatement();
-            ResultSet data = st.executeQuery("SELECT sum(quantity_for_delivery) FROM `course_work`.materials_to_deliver;");
+            ResultSet data = st.executeQuery("SELECT sum(quantity) FROM `course_work`.materials_to_delivery;");
             while(data.next()){
-                q_to_deliver = data.getInt("sum(quantity_for_delivery)");
+                q_to_deliver = data.getInt("sum(quantity)");
             }
 
             data = st.executeQuery("SELECT sum(quantity) FROM `course_work`.delivered_materials;");

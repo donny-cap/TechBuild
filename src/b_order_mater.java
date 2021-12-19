@@ -30,7 +30,19 @@ public class b_order_mater implements Initializable {
     private Label wrongquantity;
 
     @FXML
-    private TableView<oop_materials> table_materials;
+    private TableView<oop_materials> table_order;
+
+    @FXML
+    private TableColumn<oop_materials, String> col_name1;
+
+    @FXML
+    private TableColumn<oop_materials, Integer> col_quantity1;
+
+    @FXML
+    private TableColumn<oop_materials, Integer> col_cost1;
+
+    @FXML
+    private TableView<oop_materials> table_ordered;
 
     @FXML
     private TableColumn<oop_materials, String> col_name;
@@ -58,7 +70,7 @@ public class b_order_mater implements Initializable {
         col_cost.setCellValueFactory(new PropertyValueFactory<>("cost"));
 
         listM = connectionsql.getDatamaterials();
-        table_materials.setItems(listM);
+        table_ordered.setItems(listM);
     }
 
     @FXML
@@ -66,7 +78,7 @@ public class b_order_mater implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement statement = con.createStatement();
-        ResultSet data = statement.executeQuery("SELECT quantity FROM `course_work`.materials where name_of_material = '"+nameField.getText()+"'");
+        ResultSet data = statement.executeQuery("SELECT quantity FROM `course_work`.materials where name = '"+nameField.getText()+"'");
         int quantity_bd = 0;
         boolean bool = false;
         if(data.next()){
@@ -83,20 +95,20 @@ public class b_order_mater implements Initializable {
                 wrongquantity.setText("Quantity more than expected");
             }
             else {
-    //            statement.executeUpdate("UPDATE `construction: supplier, contractor`.`materials_to_deliver` SET `quantity_for_delivery` = quantity - "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
-    //            data = statement.executeQuery("SELECT * FROM `construction: supplier, contractor`.delivered_materials where name_of_material = "+nameField.getText()+"");
+    //            statement.executeUpdate("UPDATE `course_work`.`materials_to_delivery` SET `quantity_for_delivery` = quantity - "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+    //            data = statement.executeQuery("SELECT * FROM `course_work`.delivered_materials where name_of_material = "+nameField.getText()+"");
     //            if(data.next()){
-    //                statement.executeUpdate("UPDATE `construction: supplier, contractor`.`delivered_materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+    //                statement.executeUpdate("UPDATE `course_work`.`delivered_materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
     //            }else{
-    //                statement.executeUpdate("INSERT INTO `construction: supplier, contractor`.`delivered_materials` (`name_of_material`, `quantity`, `date`) VALUES ('"+nameField.getText()+"', '"+quantityField.getText()+"', '0000-00-01');");
+    //                statement.executeUpdate("INSERT INTO `course_work`.`delivered_materials` (`name_of_material`, `quantity`, `date`) VALUES ('"+nameField.getText()+"', '"+quantityField.getText()+"', '0000-00-01');");
     //            }
-    //            statement.executeUpdate("UPDATE `construction: supplier, contractor`.`materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
-                data = statement.executeQuery("SELECT * FROM `course_work`.`materials_to_deliver` where name_of_material = '"+nameField.getText()+"'");
+    //            statement.executeUpdate("UPDATE `course_work`.`materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+                data = statement.executeQuery("SELECT * FROM `course_work`.`materials_to_delivery` where name = '"+nameField.getText()+"'");
 
                 if(data.next()){
-                    statement.executeUpdate("UPDATE `course_work`.`materials_to_deliver` SET `quantity_for_delivery` = quantity_for_delivery + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+                    statement.executeUpdate("UPDATE `course_work`.`materials_to_delivery` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name` = '"+nameField.getText()+"');");
                 }else{
-                    statement.executeUpdate("INSERT INTO `course_work`.`materials_to_deliver` (`name_of_material`, `quantity_for_delivery`) VALUES ('"+nameField.getText()+"', "+quantityField.getText()+");");
+                    statement.executeUpdate("INSERT INTO `course_work`.`materials_to_delivery` (`name`, `quantity`) VALUES ('"+nameField.getText()+"', "+quantityField.getText()+");");
                 }
                 UpdateTable();
 

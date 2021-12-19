@@ -7,6 +7,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class s_delivered_mater implements Initializable {
@@ -15,13 +16,22 @@ public class s_delivered_mater implements Initializable {
     private TableView<oop_del_mater> table_delivmat;
 
     @FXML
+    private TableColumn<oop_del_mater, Date> col_date;
+
+    @FXML
+    private TableColumn<oop_del_mater, String> col_manufacturer;
+
+    @FXML
     private TableColumn<oop_del_mater, String> col_name;
+
+    @FXML
+    private TableColumn<oop_del_mater, Integer> col_num;
 
     @FXML
     private TableColumn<oop_del_mater, Integer> col_quantity;
 
     @FXML
-    private TableColumn<oop_del_mater, String> col_date;
+    private TableColumn<oop_del_mater, Integer> col_weight;
 
     public void exit() throws IOException {
         Main m = new Main();
@@ -70,8 +80,11 @@ public class s_delivered_mater implements Initializable {
     }
 
     public void UpdateTable() throws Exception {
+        col_num.setCellValueFactory(new PropertyValueFactory<>("number"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        col_manufacturer.setCellValueFactory(new PropertyValueFactory<>("manufacturer"));
         col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        col_weight.setCellValueFactory(new PropertyValueFactory<>("weight"));
         col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         listM = connectionsql.getDelmaterials();

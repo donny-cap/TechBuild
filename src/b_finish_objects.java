@@ -12,6 +12,8 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class b_finish_objects implements Initializable {
@@ -27,13 +29,19 @@ public class b_finish_objects implements Initializable {
     private TableView<oop_objects> table_objects;
 
     @FXML
-    private TableColumn<oop_objects, String> col_name;
+    private TableColumn<oop_objects, String> col_address;
 
     @FXML
-    private TableColumn<oop_objects, Integer> col_quantity;
+    private TableColumn<oop_objects, String> col_company;
 
     @FXML
-    private TableColumn<oop_objects, String> col_destination;
+    private TableColumn<oop_objects, Integer> col_num;
+
+    @FXML
+    private TableColumn<oop_objects, String> col_objects;
+
+    @FXML
+    private TableColumn<oop_objects, Integer> col_square;
 
     ObservableList<oop_objects> listM;
 
@@ -48,9 +56,11 @@ public class b_finish_objects implements Initializable {
 
 
     public void UpdateTable() throws Exception {
-        col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        col_destination.setCellValueFactory(new PropertyValueFactory<>("destination"));
+        col_num.setCellValueFactory(new PropertyValueFactory<>("number"));
+        col_objects.setCellValueFactory(new PropertyValueFactory<>("objects"));
+        col_company.setCellValueFactory(new PropertyValueFactory<>("company"));
+        col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
+        col_square.setCellValueFactory(new PropertyValueFactory<>("square"));
 
         listM = connectionsql.getDataobjects();
         table_objects.setItems(listM);
@@ -61,21 +71,24 @@ public class b_finish_objects implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement statement = con.createStatement();
-        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.show_objects_for_construction where Name_of_areas = '"+nameField.getText()+"';");
+        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.`objects_constructing` where objects = '"+nameField.getText()+"';");
         boolean bool = false;
         if(data.next()){
         }else{
             bool = true;
         }
 
-        String objects = null, area = "";
-        int quantity_of_finished = 0;
-        data = statement.executeQuery("SELECT * FROM `course_work`.show_objects_for_construction where Name_of_areas = '"+nameField.getText()+"';");
+        String objects = null, company = "", address = "";
+        int square = 0;
+        Date date = new Date();
+        String time= new SimpleDateFormat("yyyy-MM-dd").format(date);
+        data = statement.executeQuery("SELECT * FROM `course_work`.`objects_constructing` where objects = '"+nameField.getText()+"';");
 
         while(data.next()){
-            objects = data.getString("Name_of_areas");
-            area = data.getString("destination");
-            quantity_of_finished = data.getInt("quantity_in_areas");
+            objects = data.getString("objects");
+            company = data.getString("company");
+            address = data.getString("address");
+            square = data.getInt("square (m2)");
         }
         if (nameField.getText().isEmpty()) {
             wrongname.setText("Please enter data.");
@@ -84,8 +97,8 @@ public class b_finish_objects implements Initializable {
         }
         else {
 
-            statement.executeUpdate("DELETE FROM `course_work`.`show_objects_for_construction` WHERE (`Name_of_areas` = '"+nameField.getText()+"');");
-            statement.executeUpdate("INSERT INTO `course_work`.`finished_objects` (`objects`, `area`, `quantity_of_finished`) VALUES ('"+objects+"', '"+area+"', "+quantity_of_finished+");");
+            statement.executeUpdate("DELETE FROM `course_work`.`objects_constructing` WHERE (`objects` = '"+nameField.getText()+"');");
+            statement.executeUpdate("INSERT INTO `course_work`.`finished_objects` (`objects`, `company`, `address`, `square (m2)`, `date`) VALUES ('"+objects+"', '"+company+"','"+address+"', '"+square+"', '"+time+"' );");
             statement.close();
             UpdateTable();
             wrongname.setText("Success!");

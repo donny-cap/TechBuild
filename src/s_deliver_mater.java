@@ -34,6 +34,15 @@ public class s_deliver_mater implements Initializable {
     private TableView<oop_req_deliver> table_reqdeliver;
 
     @FXML
+    private TableColumn<oop_req_deliver, Integer> col_cost;
+
+    @FXML
+    private TableColumn<oop_req_deliver, Date> col_date;
+
+    @FXML
+    private TableColumn<oop_req_deliver, String> col_manufacturer;
+
+    @FXML
     private TableColumn<oop_req_deliver, String> col_name;
 
     @FXML
@@ -52,7 +61,10 @@ public class s_deliver_mater implements Initializable {
 
     public void UpdateTable() throws Exception {
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        col_manufacturer.setCellValueFactory(new PropertyValueFactory<>("manufacturer"));
         col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        col_cost.setCellValueFactory(new PropertyValueFactory<>("cost"));
+        col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         listM = connectionsql.getReqdeliver();
         table_reqdeliver.setItems(listM);
@@ -63,12 +75,12 @@ public class s_deliver_mater implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement statement = con.createStatement();
-        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.materials_to_deliver where name_of_material = '"+nameField.getText()+"'");
+        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.materials_to_delivery where name = '"+nameField.getText()+"'");
 
         int quantity_bd = 0;
         boolean bool = false;
         if(data.next()){
-        quantity_bd = data.getInt("quantity_for_delivery");
+        quantity_bd = data.getInt("quantity");
         }else{
             bool = true;
         }
@@ -87,15 +99,15 @@ public class s_deliver_mater implements Initializable {
             Date date = new Date();
             String time= new SimpleDateFormat("yyyy-MM-dd").format(date);
 
-            statement.executeUpdate("UPDATE `course_work`.`materials_to_deliver` SET `quantity_for_delivery` = quantity_for_delivery - "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
-            data = statement.executeQuery("SELECT * FROM `course_work`.`delivered_materials` where name_of_material = '"+nameField.getText()+"'");
+            statement.executeUpdate("UPDATE `course_work`.`materials_to_delivery` SET `quantity` = quantity - "+quantityField.getText()+" WHERE (`name` = '"+nameField.getText()+"');");
+            data = statement.executeQuery("SELECT * FROM `course_work`.`delivered_materials` where name = '"+nameField.getText()+"'");
             if(data.next()){
-                statement.executeUpdate("UPDATE `course_work`.`delivered_materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+                statement.executeUpdate("UPDATE `course_work`.`delivered_materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name` = '"+nameField.getText()+"');");
             }else{
-                statement.executeUpdate("INSERT INTO `course_work`.`delivered_materials` (`name_of_material`, `quantity`, `date`) VALUES ('"+nameField.getText()+"', "+quantityField.getText()+", '"+time+"');");
+                statement.executeUpdate("INSERT INTO `course_work`.`delivered_materials` (`name`, `quantity`, `date`) VALUES ('"+nameField.getText()+"', "+quantityField.getText()+", '"+time+"');");
             }
 
-            statement.executeUpdate("UPDATE `course_work`.`materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name_of_material` = '"+nameField.getText()+"');");
+            statement.executeUpdate("UPDATE `course_work`.`materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name` = '"+nameField.getText()+"');");
 
             UpdateTable();
             nameField.setText("");
