@@ -87,6 +87,7 @@ public class b_order_mater implements Initializable {
 
         Connection conn = connectionsql.getConnection();
 
+        assert conn != null;
         ResultSet res = conn.createStatement().executeQuery("SELECT * FROM `ordered_list`;");
 
 
@@ -110,6 +111,7 @@ public class b_order_mater implements Initializable {
 
 
         for(order_add_list o : order_list){
+            assert conn != null;
             ResultSet res = conn.createStatement().executeQuery("SELECT `cost` FROM `materials` where `name` = '" + o.getName() + "';");
             while(res.next()){
                 conn.prepareStatement("INSERT INTO `ordered_list`( `name`, `quantity`, `cost`, `date`) VALUES ('"  + o.getName() + "','" + o.getQuantity() + "','" + res.getString("cost") + "','" + date + "');").execute();
