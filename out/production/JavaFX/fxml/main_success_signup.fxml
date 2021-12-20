@@ -11,55 +11,54 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #E5E5E0;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main_success_signup">
    <right>
-      <AnchorPane prefHeight="700.0" prefWidth="383.0" style="-fx-background-color: #f56e56;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="194.0" fitWidth="414.0" layoutY="505.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../png/cartoon_city.png" />
-               </image>
-            </ImageView>
-            <Text fill="#191859" layoutX="95.0" layoutY="206.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find your people. Engage your customers. Build your brand. Do it all with TechBuild platform." wrappingWidth="192.20504760742188">
-               <font>
-                  <Font name="Monotype Corsiva" size="24.0" />
-               </font>
-            </Text>
-         </children>
+      <AnchorPane prefHeight="700.0" prefWidth="383.0" style="-fx-background-color: #f56e56;"
+                  BorderPane.alignment="CENTER">
+         <ImageView fitHeight="194.0" fitWidth="414.0" layoutY="505.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../png/cartoon_city.png"/>
+         </ImageView>
+         <Text fill="#191859" layoutX="95.0" layoutY="206.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0"
+               text="Find your people. Engage your customers. Build your brand. Do it all with TechBuild platform."
+               wrappingWidth="192.20504760742188">
+            <font>
+               <Font name="Monotype Corsiva" size="24.0"/>
+            </font>
+         </Text>
       </AnchorPane>
    </right>
    <center>
-      <AnchorPane prefHeight="700.0" prefWidth="818.0" style="-fx-background-color: #f2f2f2;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="173.0" fitWidth="331.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../png/Logo_cw.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="294.0" layoutY="230.0" text="Thanks, you`re signed up!" textFill="#1e1e1e">
-               <font>
-                  <Font name="Franklin Gothic Demi Italic" size="24.0" />
-               </font>
-            </Label>
-            <Button layoutX="372.0" layoutY="444.0" mnemonicParsing="false" onAction="#confirm" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #1e1e1e;" text="Confirm" textFill="WHITE">
-               <font>
-                  <Font name="Franklin Gothic Demi" size="14.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="43.0" fitWidth="42.0" layoutX="408.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../png/check-mark.png" />
-               </image>
-            </ImageView>
-            <Text fill="#1e1e1e" layoutX="275.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chech your email for new  updates.">
-               <font>
-                  <Font name="Franklin Gothic Demi" size="20.0" />
-               </font>
-            </Text>
-            <Text fill="#1e1e1e" layoutX="235.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please confirm your registration to continue!" wrappingWidth="429.6000061035156">
-               <font>
-                  <Font name="Franklin Gothic Demi" size="20.0" />
-               </font>
-            </Text>
-         </children>
+      <AnchorPane prefHeight="700.0" prefWidth="818.0" style="-fx-background-color: #f2f2f2;"
+                  BorderPane.alignment="CENTER">
+         <ImageView fitHeight="173.0" fitWidth="331.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true"
+                    preserveRatio="true">
+            <Image url="@../png/Logo_cw.png"/>
+         </ImageView>
+         <Label layoutX="294.0" layoutY="230.0" text="Thanks, you`re signed up!" textFill="#1e1e1e">
+            <font>
+               <Font name="Franklin Gothic Demi Italic" size="24.0"/>
+            </font>
+         </Label>
+         <Button layoutX="372.0" layoutY="444.0" mnemonicParsing="false" onAction="#confirm" prefHeight="26.0"
+                 prefWidth="113.0" style="-fx-background-color: #1e1e1e;" text="Confirm" textFill="WHITE">
+            <font>
+               <Font name="Franklin Gothic Demi" size="14.0"/>
+            </font>
+         </Button>
+         <ImageView fitHeight="43.0" fitWidth="42.0" layoutX="408.0" layoutY="144.0" pickOnBounds="true"
+                    preserveRatio="true">
+            <Image url="@../png/check-mark.png"/>
+         </ImageView>
+         <Text fill="#1e1e1e" layoutX="275.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0"
+               text="Chech your email for new  updates.">
+            <font>
+               <Font name="Franklin Gothic Demi" size="20.0"/>
+            </font>
+         </Text>
+         <Text fill="#1e1e1e" layoutX="235.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0"
+               text="Please confirm your registration to continue!" wrappingWidth="429.6000061035156">
+            <font>
+               <Font name="Franklin Gothic Demi" size="20.0"/>
+            </font>
+         </Text>
       </AnchorPane>
    </center>
 </BorderPane>
