@@ -16,229 +16,187 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s_deliver_mater">
     <left>
-        <VBox depthTest="ENABLE" opacity="0.95" prefHeight="622.0" prefWidth="274.0"
-              style="-fx-background-color: #6e88c4;" BorderPane.alignment="CENTER">
+        <VBox depthTest="ENABLE" opacity="0.95" prefHeight="622.0" prefWidth="274.0" style="-fx-background-color: #6e88c4;" BorderPane.alignment="CENTER">
             <AnchorPane prefHeight="83.0" prefWidth="274.0">
-                <Label alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="44.0" prefHeight="46.0"
-                       prefWidth="186.0" text="TechBuild" textFill="#113f8a" wrapText="true">
+                <Label alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="44.0" prefHeight="46.0" prefWidth="186.0" text="TechBuild" textFill="#113f8a" wrapText="true">
                     <font>
-                        <Font name="Copperplate Gothic Bold" size="32.0"/>
+                        <Font name="Copperplate Gothic Bold" size="32.0" />
                     </font>
                 </Label>
-                <Label alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="44.0" layoutY="46.0"
-                       prefHeight="10.0" prefWidth="186.0" text="trade area" textFill="#113f8a" wrapText="true">
+                <Label alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="44.0" layoutY="46.0" prefHeight="10.0" prefWidth="186.0" text="trade area" textFill="#113f8a" wrapText="true">
                     <font>
-                        <Font name="Eras Bold ITC" size="14.0"/>
+                        <Font name="Eras Bold ITC" size="14.0" />
                     </font>
                 </Label>
             </AnchorPane>
-            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664"
-                  startY="-1.4141991138458252" stroke="#113f8a">
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </VBox.margin>
             </Line>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#list_mater"
-                       prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css"
-                       text="Full list of materials" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#list_mater" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Full list of materials" textFill="WHITE">
                 <graphic>
                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../png/list-ingredients-64.png"/>
+                        <Image url="@../png/list-ingredients-64.png" />
                     </ImageView>
                 </graphic>
                 <padding>
-                    <Insets left="30.0"/>
+                    <Insets left="30.0" />
                 </padding>
                 <font>
-                    <Font name="Commercial Pi BT" size="13.0"/>
+                    <Font name="Commercial Pi BT" size="13.0" />
                 </font>
             </JFXButton>
-            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664"
-                  startY="-1.4141991138458252" stroke="#113f8a">
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </VBox.margin>
             </Line>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0"
-                       onAction="#required_to_deliver" prefHeight="45.0" prefWidth="282.0" styleClass="button1"
-                       stylesheets="@../styling/styling.css" text="Required  to deliver" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#required_to_deliver" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Required  to deliver" textFill="WHITE">
                 <graphic>
                     <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../png/rules_book_50px.png"/>
+                        <Image url="@../png/rules_book_50px.png" />
                     </ImageView>
                 </graphic>
                 <padding>
-                    <Insets left="30.0"/>
+                    <Insets left="30.0" />
                 </padding>
                 <font>
-                    <Font name="Commercial Pi BT" size="13.0"/>
+                    <Font name="Commercial Pi BT" size="13.0" />
                 </font>
             </JFXButton>
-            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664"
-                  startY="-1.4141991138458252" stroke="#113f8a">
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </VBox.margin>
             </Line>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0"
-                       onAction="#deliver_the_materials" prefHeight="45.0" prefWidth="282.0" styleClass="button1"
-                       stylesheets="@../styling/styling.css" text="Deliver the materials" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#deliver_the_materials" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Deliver the materials" textFill="WHITE">
                 <graphic>
                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../png/depot_50px.png"/>
+                        <Image url="@../png/depot_50px.png" />
                     </ImageView>
                 </graphic>
                 <padding>
-                    <Insets left="30.0"/>
+                    <Insets left="30.0" />
                 </padding>
                 <font>
-                    <Font name="Commercial Pi BT" size="13.0"/>
+                    <Font name="Commercial Pi BT" size="13.0" />
                 </font>
             </JFXButton>
-            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664"
-                  startY="-1.4141991138458252" stroke="#113f8a">
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </VBox.margin>
             </Line>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0"
-                       onAction="#delivered_materials" prefHeight="45.0" prefWidth="282.0" styleClass="button1"
-                       stylesheets="@../styling/styling.css" text="Delivered materials" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#delivered_materials" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Delivered materials" textFill="WHITE">
                 <graphic>
                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../png/order_50px.png"/>
+                        <Image url="@../png/order_50px.png" />
                     </ImageView>
                 </graphic>
                 <padding>
-                    <Insets left="30.0"/>
+                    <Insets left="30.0" />
                 </padding>
                 <font>
-                    <Font name="Commercial Pi BT" size="13.0"/>
+                    <Font name="Commercial Pi BT" size="13.0" />
                 </font>
             </JFXButton>
-            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664"
-                  startY="-1.4141991138458252" stroke="#113f8a">
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </VBox.margin>
             </Line>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#percentage"
-                       prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css"
-                       text="Persentage" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#percentage" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Persentage" textFill="WHITE">
                 <graphic>
                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../png/inbox-5-64.png"/>
+                        <Image url="@../png/inbox-5-64.png" />
                     </ImageView>
                 </graphic>
                 <padding>
-                    <Insets left="30.0"/>
+                    <Insets left="30.0" />
                 </padding>
                 <font>
-                    <Font name="Commercial Pi BT" size="13.0"/>
+                    <Font name="Commercial Pi BT" size="13.0" />
                 </font>
             </JFXButton>
-            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664"
-                  startY="-1.4141991138458252" stroke="#113f8a">
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </VBox.margin>
             </Line>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#info"
-                       prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css"
-                       text="Info" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#info" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Info" textFill="WHITE">
                 <graphic>
                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../png/info_50px.png"/>
+                        <Image url="@../png/info_50px.png" />
                     </ImageView>
                 </graphic>
                 <padding>
-                    <Insets left="30.0"/>
+                    <Insets left="30.0" />
                 </padding>
                 <font>
-                    <Font name="Commercial Pi BT" size="13.0"/>
+                    <Font name="Commercial Pi BT" size="13.0" />
                 </font>
             </JFXButton>
-            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664"
-                  startY="-1.4141991138458252" stroke="#113f8a">
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </VBox.margin>
             </Line>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#exit"
-                       prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css"
-                       text="Exit" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#exit" prefHeight="45.0" prefWidth="282.0" styleClass="button1" stylesheets="@../styling/styling.css" text="Exit" textFill="WHITE">
                 <graphic>
                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../png/logout_50px.png"/>
+                        <Image url="@../png/logout_50px.png" />
                     </ImageView>
                 </graphic>
                 <padding>
-                    <Insets left="30.0"/>
+                    <Insets left="30.0" />
                 </padding>
                 <font>
-                    <Font name="Commercial Pi BT" size="13.0"/>
+                    <Font name="Commercial Pi BT" size="13.0" />
                 </font>
             </JFXButton>
-            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664"
-                  startY="-1.4141991138458252" stroke="#113f8a">
+            <Line endX="168.8928680419922" endY="-1.414204478263855" startX="-53.84262466430664" startY="-1.4141991138458252" stroke="#113f8a">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </VBox.margin>
             </Line>
             <ImageView fitHeight="155.0" fitWidth="274.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
                 <VBox.margin>
-                    <Insets top="200.0"/>
+                    <Insets top="200.0" />
                 </VBox.margin>
-                <Image url="@../png/SeekPng.png"/>
+                <Image url="@../png/SeekPng.png" />
             </ImageView>
         </VBox>
     </left>
     <right>
-        <AnchorPane prefHeight="632.0" prefWidth="928.0" style="-fx-background-color: white;"
-                    BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="632.0" prefWidth="928.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
             <AnchorPane layoutX="-1.0" prefHeight="60.0" prefWidth="928.0" style="-fx-background-color: #6e88c4;">
                 <Label layoutX="345.0" layoutY="15.0" text="Deliver materials" textFill="WHITE">
                     <font>
-                        <Font name="Gill Sans Ultra Bold" size="22.0"/>
+                        <Font name="Gill Sans Ultra Bold" size="22.0" />
                     </font>
                 </Label>
             </AnchorPane>
-
-            <TextField fx:id="nameField" layoutX="259.0" layoutY="543.0" prefHeight="26.0" prefWidth="237.0"
-                       promptText="name of material"
-                       style="-fx-background-color: white; -fx-prompt-text-fill: #1e1e1e;"/>
-            <TextField fx:id="quantityField" layoutX="259.0" layoutY="592.0" prefHeight="26.0" prefWidth="138.0"
-                       promptText="quantity" style="-fx-background-color: white; -fx-prompt-text-fill: #1e1e1e;"/>
-            <Label fx:id="wrongname" layoutX="259.0" layoutY="567.0" prefHeight="18.0" prefWidth="147.0"
-                   textFill="RED"/>
-            <Label fx:id="wrongquantity" layoutX="259.0" layoutY="616.0" prefHeight="18.0" prefWidth="147.0"
-                   textFill="RED"/>
-            <Label layoutX="169.0" layoutY="547.0" text="Name" textFill="#113f8a">
-                <font>
-                    <Font name="Eras Bold ITC" size="15.0"/>
-                </font>
-            </Label>
+            <TextField fx:id="quantityField" layoutX="259.0" layoutY="592.0" prefHeight="26.0" prefWidth="138.0" promptText="quantity" style="-fx-background-color: white; -fx-prompt-text-fill: grey;" />
+            <Label fx:id="wrongquantity" layoutX="259.0" layoutY="616.0" prefHeight="18.0" prefWidth="147.0" textFill="RED" />
             <Label layoutX="169.0" layoutY="596.0" text="Quantity" textFill="#113f8a">
                 <font>
-                    <Font name="Eras Bold ITC" size="15.0"/>
+                    <Font name="Eras Bold ITC" size="15.0" />
                 </font>
             </Label>
-            <Line endX="100.0" layoutX="360.0" layoutY="618.0" startX="-100.0"/>
-            <Line endX="100.0" layoutX="360.0" layoutY="569.0" startX="-100.0"/>
-            <JFXButton layoutX="562.0" layoutY="576.0" onAction="#deliver" prefHeight="32.0" prefWidth="124.0"
-                       styleClass="button4" stylesheets="@../styling/styling.css" text="Deliver" textFill="WHITE">
+            <Line endX="100.0" layoutX="360.0" layoutY="618.0" startX="-100.0" />
+            <JFXButton layoutX="560.0" layoutY="589.0" onAction="#deliver" prefHeight="32.0" prefWidth="150.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Deliver" textFill="WHITE">
                 <font>
-                    <Font name="Commercial Pi BT" size="14.0"/>
+                    <Font name="Commercial Pi BT" size="14.0" />
                 </font>
             </JFXButton>
-            <TableView fx:id="table_reqdeliver" layoutX="11.0" layoutY="75.0" prefHeight="438.0" prefWidth="906.0"
-                       stylesheets="@../styling/styling.css">
+            <TableView fx:id="table_reqdeliver" layoutX="11.0" layoutY="75.0" prefHeight="470.0" prefWidth="906.0" stylesheets="@../styling/styling.css">
                 <columns>
-                    <TableColumn fx:id="col_name" prefWidth="315.9999656677246" text="Name"/>
-                    <TableColumn fx:id="col_manufacturer" prefWidth="201.5999755859375" text="Manufacturer"/>
-                    <TableColumn fx:id="col_quantity" prefWidth="124.800048828125" text="Quantity"/>
-                    <TableColumn fx:id="col_cost" prefWidth="124.79998779296875" text="Cost"/>
-                    <TableColumn fx:id="col_date" prefWidth="131.2000732421875" text="Date"/>
+                    <TableColumn fx:id="col_name" prefWidth="315.9999656677246" text="Name" />
+                    <TableColumn fx:id="col_manufacturer" prefWidth="201.5999755859375" text="Manufacturer" />
+                    <TableColumn fx:id="col_quantity" prefWidth="124.800048828125" text="Quantity" />
+                    <TableColumn fx:id="col_cost" prefWidth="124.79998779296875" text="Cost" />
+                    <TableColumn fx:id="col_date" prefWidth="131.2000732421875" text="Date" />
                 </columns>
             </TableView>
 

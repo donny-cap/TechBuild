@@ -194,84 +194,62 @@
       </VBox>
    </left>
    <right>
-      <AnchorPane prefHeight="632.0" prefWidth="928.0" style="-fx-background-color: white;"
-                  BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="632.0" prefWidth="928.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <AnchorPane layoutX="-1.0" prefHeight="60.0" prefWidth="928.0" style="-fx-background-color: #6e88c4;">
-            <Label layoutX="350.0" layoutY="15.0" text="Full list of materials" textAlignment="CENTER"
-                   textFill="WHITE">
+            <Label layoutX="350.0" layoutY="15.0" text="Full list of materials" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Gill Sans Ultra Bold" size="22.0"/>
+                  <Font name="Gill Sans Ultra Bold" size="22.0" />
                </font>
             </Label>
          </AnchorPane>
+         <TableView fx:id="table_materials" layoutX="6.0" layoutY="71.0" prefHeight="558.0" prefWidth="914.0" stylesheets="@../styling/styling.css">
+            <columns>
+               <TableColumn fx:id="col_num" prefWidth="41.60000705718994" text="№" />
+               <TableColumn fx:id="col_name" prefWidth="293.5999870300293" text="Name" />
+               <TableColumn fx:id="col_manuf" prefWidth="154.4000244140625" text="Manufacturer" />
+               <TableColumn fx:id="col_type" prefWidth="151.199951171875" text="Type" />
+               <TableColumn fx:id="col_quantity" prefWidth="93.5999755859375" text="Quantity" />
+               <TableColumn fx:id="col_weight" prefWidth="85.5999755859375" text="Weight (kg)" />
+               <TableColumn fx:id="col_cost" prefWidth="84.0" text="Cost" />
+            </columns>
+         </TableView>
          <HBox layoutX="34.0" layoutY="642.0" prefHeight="38.0" prefWidth="864.0">
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#import_pdf"
-                       prefHeight="46.0" prefWidth="220.0" styleClass="button4" stylesheets="@../styling/styling.css"
-                       text="Import to PDF" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#import_pdf" prefHeight="46.0" prefWidth="220.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Import to PDF" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../png/pdf_50px.png"/>
+                     <Image url="@../png/pdf_50px.png" />
                   </ImageView>
                </graphic>
                <padding>
-                  <Insets left="30.0"/>
+                  <Insets left="30.0" />
                </padding>
                <font>
-                  <Font name="Commercial Pi BT" size="13.0"/>
+                  <Font name="Commercial Pi BT" size="13.0" />
                </font>
                <HBox.margin>
-                  <Insets right="30.0"/>
+                  <Insets right="30.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#import_xlsx"
-                       prefHeight="45.0" prefWidth="220.0" styleClass="button4" stylesheets="@../styling/styling.css"
-                       text="Import to Excel" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#import_xlsx" prefHeight="45.0" prefWidth="220.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Import to Excel" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../png/xlsx_50px.png"/>
+                     <Image url="@../png/xlsx_50px.png" />
                   </ImageView>
                </graphic>
                <padding>
-                  <Insets left="30.0"/>
+                  <Insets left="30.0" />
                </padding>
                <font>
-                  <Font name="Commercial Pi BT" size="13.0"/>
+                  <Font name="Commercial Pi BT" size="13.0" />
                </font>
                <HBox.margin>
-                  <Insets right="30.0"/>
-               </HBox.margin>
-            </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" onAction="#add_path"
-                       prefHeight="45.0" prefWidth="220.0" styleClass="button4" stylesheets="@../styling/styling.css"
-                       text="Add path" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../png/easy_to_find_50px.png"/>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="30.0"/>
-               </padding>
-               <font>
-                  <Font name="Commercial Pi BT" size="13.0"/>
-               </font>
-               <HBox.margin>
-                  <Insets right="30.0"/>
+                  <Insets right="30.0" />
                </HBox.margin>
             </JFXButton>
          </HBox>
-         <TableView fx:id="table_materials" layoutX="9.0" layoutY="71.0" prefHeight="558.0" prefWidth="914.0"
-                    stylesheets="@../styling/styling.css">
-            <columns>
-               <TableColumn fx:id="col_num" prefWidth="41.60000705718994" text="№"/>
-               <TableColumn fx:id="col_name" prefWidth="293.5999870300293" text="Name"/>
-               <TableColumn fx:id="col_manuf" prefWidth="154.4000244140625" text="Manufacturer"/>
-               <TableColumn fx:id="col_type" prefWidth="151.199951171875" text="Type"/>
-               <TableColumn fx:id="col_quantity" prefWidth="93.5999755859375" text="Quantity"/>
-               <TableColumn fx:id="col_weight" prefWidth="85.5999755859375" text="Weight (kg)"/>
-               <TableColumn fx:id="col_cost" prefWidth="84.0" text="Cost"/>
-            </columns>
-         </TableView>
+         <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+         <Label fx:id="pdf" layoutX="65.0" layoutY="678.0" prefHeight="18.0" prefWidth="76.0" textFill="GREEN" />
+         <Label fx:id="excel" layoutX="317.0" layoutY="678.0" prefHeight="18.0" prefWidth="76.0" textFill="GREEN" />
       </AnchorPane>
    </right>
 </BorderPane>

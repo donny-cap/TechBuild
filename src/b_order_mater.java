@@ -13,7 +13,6 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -121,6 +120,9 @@ public class b_order_mater implements Initializable {
         order_list.clear();
         table_order.setItems(order_list);
 
+        total = 0;
+        total_label.setText("Total: ");
+
         UpdateTable();
 
 
@@ -177,6 +179,8 @@ public class b_order_mater implements Initializable {
     @FXML
     void remove() {
         table_order.getItems().removeAll(table_order.getSelectionModel().getSelectedItem());
+        total = 0;
+        total_label.setText("Total: ");
 
     }
 
@@ -191,12 +195,15 @@ public class b_order_mater implements Initializable {
         }
     }
 
+    private int total = 0;
+
     @FXML
-    void add() throws SQLException {
+    void add() throws Exception {
         Connection conn = connectionsql.getConnection();
 
         if(isNumeric(nameField.getText())){
             conn = connectionsql.getConnection();
+            assert conn != null;
             ResultSet res = conn.createStatement().executeQuery("SELECT `name` FROM `materials` WHERE `number` = '" + (nameField.getText() + "';"));
             while (res.next()) {
                 nameField.setText(res.getString("name"));
@@ -240,7 +247,7 @@ public class b_order_mater implements Initializable {
                 String quantity = order_list.get(i).getQuantity();
 
                 order_list.remove(i);
-                order_list.add(new order_add_list(name, String.valueOf(Integer.valueOf(quantity) + Integer.valueOf(quantityField.getText()))));
+                order_list.add(new order_add_list(name, String.valueOf(Integer.parseInt(quantity) + Integer.parseInt(quantityField.getText()))));
                 b = false;
             }
         }
@@ -248,9 +255,20 @@ public class b_order_mater implements Initializable {
             order_list.add(new order_add_list(nameField.getText(), quantityField.getText()));
         }
 
-        ResultSet res2 = conn.createStatement().executeQuery("");
 
         table_order.setItems(order_list);
+
+
+        for(order_add_list o : order_list){
+            ResultSet res = conn.createStatement().executeQuery("SELECT `cost` from `materials` where `name` = '" + o.getName() + "'");
+
+            while (res.next()){
+                total += res.getInt("cost") * Integer.parseInt(quantityField.getText());
+            }
+        }
+
+        total_label.setText("Total: " + String.valueOf(total) + " som");
+        UpdateTable();
     }
 
 

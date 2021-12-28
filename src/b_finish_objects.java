@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
@@ -17,13 +18,6 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 public class b_finish_objects implements Initializable {
-
-
-    @FXML
-    private TextField nameField;
-
-    @FXML
-    private Label wrongname;
 
     @FXML
     private TableView<oop_objects> table_objects;
@@ -71,39 +65,23 @@ public class b_finish_objects implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement statement = con.createStatement();
-        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.`objects_constructing` where objects = '"+nameField.getText()+"';");
-        boolean bool = false;
+        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.`objects_constructing` where `number` = '" + table_objects.getSelectionModel().getSelectedItem().getNumber()+"';");
         if(data.next()){
-        }else{
-            bool = true;
-        }
+            Date date = new Date();
+            String time= new SimpleDateFormat("yyyy-MM-dd").format(date);
+            statement.executeUpdate("INSERT INTO `course_work`.`finished_objects` (`objects`, `company`, `address`, `square (m2)`, `date`) VALUES ('"+data.getString("objects")+"', '"+data.getString("company")+"','"+data.getString("address")+"', '"+data.getString("square (m2)")+"', '"+time+"' );");
+            statement.executeUpdate("DELETE FROM `course_work`.`objects_constructing` WHERE (`number` = '"+table_objects.getSelectionModel().getSelectedItem().getNumber()+"');");
 
-        String objects = null, company = "", address = "";
-        int square = 0;
-        Date date = new Date();
-        String time= new SimpleDateFormat("yyyy-MM-dd").format(date);
-        data = statement.executeQuery("SELECT * FROM `course_work`.`objects_constructing` where objects = '"+nameField.getText()+"';");
-
-        while(data.next()){
-            objects = data.getString("objects");
-            company = data.getString("company");
-            address = data.getString("address");
-            square = data.getInt("square (m2)");
-        }
-        if (nameField.getText().isEmpty()) {
-            wrongname.setText("Please enter data.");
-        } else if (bool){
-            wrongname.setText("This name doesn't exist");
-        }
-        else {
-
-            statement.executeUpdate("DELETE FROM `course_work`.`objects_constructing` WHERE (`objects` = '"+nameField.getText()+"');");
-            statement.executeUpdate("INSERT INTO `course_work`.`finished_objects` (`objects`, `company`, `address`, `square (m2)`, `date`) VALUES ('"+objects+"', '"+company+"','"+address+"', '"+square+"', '"+time+"' );");
-            statement.close();
             UpdateTable();
-            wrongname.setText("Success!");
-            nameField.setText("");
+
+        }else{
+            System.out.println("There is no such object");
         }
+
+        data.close();
+        statement.close();
+        con.close();
+
     }
 
     @FXML

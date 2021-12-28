@@ -19,13 +19,7 @@ public class s_deliver_mater implements Initializable {
 
 
     @FXML
-    private TextField nameField;
-
-    @FXML
     private TextField quantityField;
-
-    @FXML
-    private Label wrongname;
 
     @FXML
     private Label wrongquantity;
@@ -75,7 +69,7 @@ public class s_deliver_mater implements Initializable {
         Connection con = connectionsql.getConnection();
         assert con != null;
         Statement statement = con.createStatement();
-        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.materials_to_delivery where name = '"+nameField.getText()+"'");
+        ResultSet data = statement.executeQuery("SELECT * FROM `course_work`.materials_to_delivery where name = '"+ table_reqdeliver.getSelectionModel().getSelectedItem().getName()+"'");
 
         int quantity_bd = 0;
         boolean bool = false;
@@ -85,12 +79,10 @@ public class s_deliver_mater implements Initializable {
             bool = true;
         }
 
-        if ((quantityField.getText().isEmpty() && nameField.getText().isEmpty())) {
-            wrongname.setText("Please enter data.");
+        if ((quantityField.getText().isEmpty() && table_reqdeliver.getSelectionModel().getSelectedItem().getName().isEmpty())) {
+            System.out.println("Please enter data.");
         } else if (!(quantityField.getText().matches("[0-9]*"))){
             wrongquantity.setText("Not correct quantity");
-        } else if (bool){
-            wrongname.setText("there is no such order");
         }else if (Integer.parseInt(quantityField.getText()) > quantity_bd){
             wrongquantity.setText("Quantity more than expected");
         }
@@ -99,22 +91,28 @@ public class s_deliver_mater implements Initializable {
             Date date = new Date();
             String time= new SimpleDateFormat("yyyy-MM-dd").format(date);
 
-            statement.executeUpdate("UPDATE `course_work`.`materials_to_delivery` SET `quantity` = quantity - "+quantityField.getText()+" WHERE (`name` = '"+nameField.getText()+"');");
-            data = statement.executeQuery("SELECT * FROM `course_work`.`delivered_materials` where name = '"+nameField.getText()+"'");
+            if(quantity_bd< Integer.parseInt(quantityField.getText())){
+                statement.executeUpdate("UPDATE `course_work`.`materials_to_delivery` SET `quantity` = quantity - "+quantityField.getText()+" WHERE (`name` = '"+ table_reqdeliver.getSelectionModel().getSelectedItem().getName()+"');");
+            }else {
+                statement.executeUpdate("DELETE FROM `course_work`.`materials_to_delivery` WHERE (`name` = '"+ table_reqdeliver.getSelectionModel().getSelectedItem().getName()+"');");
+
+            }
+            data = statement.executeQuery("SELECT * FROM `course_work`.`delivered_materials` where name = '" + table_reqdeliver.getSelectionModel().getSelectedItem().getName() + "'");
             if(data.next()){
-                statement.executeUpdate("UPDATE `course_work`.`delivered_materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name` = '"+nameField.getText()+"');");
+                statement.executeUpdate("UPDATE `course_work`.`delivered_materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name` = '"+ table_reqdeliver.getSelectionModel().getSelectedItem().getName()+"');");
             }else{
-                statement.executeUpdate("INSERT INTO `course_work`.`delivered_materials` (`name`, `quantity`, `date`) VALUES ('"+nameField.getText()+"', "+quantityField.getText()+", '"+time+"');");
+                ResultSet res = statement.executeQuery("SELECT * FROM `materials` WHERE `name` = '" + table_reqdeliver.getSelectionModel().getSelectedItem().getName() + "'");
+                while(res.next()) {
+                    statement.executeUpdate("INSERT INTO `delivered_materials`( `name`, `manufacturer`, `quantity`, `weight (kg)`, `date`) VALUES ('" + res.getString("name") +"','" + res.getString("manufacturer") + "','" + quantityField.getText() + "','" + res.getString("weight (kg)") + "','" + data + "')");
+                }
+                res.close();
             }
 
-            statement.executeUpdate("UPDATE `course_work`.`materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name` = '"+nameField.getText()+"');");
+            statement.executeUpdate("UPDATE `course_work`.`materials` SET `quantity` = quantity + "+quantityField.getText()+" WHERE (`name` = '"+ table_reqdeliver.getSelectionModel().getSelectedItem().getName() +"');");
 
             UpdateTable();
-            nameField.setText("");
             quantityField.setText("");
-
             System.out.println("success!");
-            wrongname.setText("Success!");
         }
     }
 

@@ -1,5 +1,8 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
@@ -12,6 +15,8 @@ import java.util.ResourceBundle;
 
 public class s_percentage implements Initializable {
 
+    @FXML
+    private PieChart pieChart;
 
     @FXML
     private Label all_mater;
@@ -88,10 +93,19 @@ public class s_percentage implements Initializable {
             required_mat.setText(Integer.toString(q_to_deliver));
 
 
+            ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList (
+                    new PieChart.Data ("Delivered", q_delivered),
+                    new PieChart.Data ("Required to deliver", q_to_deliver));
+
+            pieChart.setData (pieChartData);
+            pieChart.setTitle("Percentage of materials");
+
+
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
 
     }
 

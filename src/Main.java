@@ -26,7 +26,7 @@ public class Main extends Application {
 //        stage.setScene(new Scene(root));
         stage.centerOnScreen();
         stage.show();
-        stage.getIcons().add(new Image("C:\\JavaFX_last_version\\src\\png\\buildings.png"));
+        stage.getIcons().add(new Image("C:\\TechBuild\\src\\png\\buildings.png"));
     }
 
     public void changeScene(String fxml) throws IOException {

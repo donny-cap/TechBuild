@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -213,9 +212,7 @@
                     </font>
                 </Label>
             </AnchorPane>
-            <TextField fx:id="nameField" layoutX="262.0" layoutY="628.0" prefHeight="26.0" prefWidth="237.0" promptText="name of object" stylesheets="@../styling/styling.css" />
-            <Label fx:id="wrongname" layoutX="317.0" layoutY="657.0" prefHeight="18.0" prefWidth="182.0" textFill="#ec0101" />
-            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" layoutX="578.0" layoutY="623.0" onAction="#finish" prefHeight="34.0" prefWidth="142.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Finish" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" depthTest="ENABLE" graphicTextGap="10.0" layoutX="647.0" layoutY="633.0" onAction="#finish" prefHeight="34.0" prefWidth="234.0" styleClass="button4" stylesheets="@../styling/styling.css" text="Finish" textFill="WHITE">
                 <graphic>
                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                         <Image url="@../png/task_completed_50px.png" />
@@ -228,12 +225,7 @@
                     <Font name="Commercial Pi BT" size="13.0" />
                 </font>
             </JFXButton>
-            <Label layoutX="202.0" layoutY="632.0" text="Name" textFill="#113f8a">
-                <font>
-                    <Font name="Eras Bold ITC" size="15.0" />
-                </font>
-            </Label>
-         <TableView fx:id="table_objects" layoutX="17.0" layoutY="77.0" prefHeight="515.0" prefWidth="896.0" stylesheets="@../styling/styling.css">
+         <TableView fx:id="table_objects" layoutX="17.0" layoutY="77.0" prefHeight="530.0" prefWidth="896.0" stylesheets="@../styling/styling.css">
             <columns>
                <TableColumn fx:id="col_num" prefWidth="32.000000953674316" text="№" />
                <TableColumn fx:id="col_objects" prefWidth="244.80002975463867" text="Objects" />
